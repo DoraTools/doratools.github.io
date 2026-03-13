@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- ── Homepage ── -->
+  <!-- Homepage -->
   <url>
     <loc>https://doratools.github.io/</loc>
     <lastmod>2026-03-13</lastmod>
@@ -12,170 +12,64 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ── EMI Calculator (Main Tool Page) ── -->
+  <!-- Primary Tool — EMI Calculator -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
 
-  <!-- ── EMI Calculator Sections (anchor links — help Google index key content) ── -->
-
+  <!-- Company Pages -->
   <url>
-    <loc>https://doratools.github.io/emi-calculator.html#rate-compare</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://doratools.github.io/about.html</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://doratools.github.io/emi-calculator.html#loan-guide</loc>
-    <lastmod>2026-03-13</lastmod>
+    <loc>https://doratools.github.io/contact.html</loc>
+    <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://doratools.github.io/privacy-policy.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://doratools.github.io/emi-calculator.html#faq</loc>
+    <loc>https://doratools.github.io/terms-of-service.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://doratools.github.io/disclaimer.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://doratools.github.io/cookie-policy.html</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Utility Pages -->
+  <url>
+    <loc>https://doratools.github.io/sitemap.html</loc>
     <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#blog</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ── Blog Articles (all 18 — content exists inside emi-calculator.html) ── -->
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-0</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-1</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-2</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-3</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-4</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-5</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-6</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-7</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-8</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-9</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-10</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-11</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-12</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-13</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-14</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-15</loc>
-    <lastmod>2026-03-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-16</loc>
-    <lastmod>2026-02-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/emi-calculator.html#article-17</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>
