@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/favicon.svg">
-  <meta name="google-site-verification" content="pjHuIU6B9-uHR5KasdiEYqKmLd0UEFEiP4z8rXOOMts" />
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>EMI Calculator 2026 — Free Loan Payment Calculator | DoraTools</title>
-<meta name="description" content="Free EMI and loan payment calculator 2026. Calculate monthly installments for mortgage, car loan, personal loan or student loan instantly. Full amortization schedule, prepayment savings — no signup needed."/>
+<title>EMI Calculator 2026 — Free Loan Calculator | DoraTools</title>
+<meta name="description" content="Free EMI calculator 2026. Monthly payments for mortgage, car, personal &amp; student loans. Amortization schedule, prepayment savings. Free &amp; instant."/>
 <meta name="keywords" content="EMI calculator, loan payment calculator, monthly payment calculator, mortgage calculator, car loan calculator, personal loan calculator, amortization calculator, loan installment calculator 2026, free loan calculator"/>
 <link rel="canonical" href="https://doratools.github.io/emi-calculator.html"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>"/>
+<meta name="theme-color" content="#0b0f1a"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <meta property="og:title" content="EMI Calculator 2026 — Free Loan Payment Calculator | DoraTools"/>
 <meta property="og:description" content="Calculate monthly loan payments instantly. Amortization table, interest breakdown, prepayment savings. Free, no signup."/>
@@ -59,9 +56,16 @@
 }
 </script>
 
+<!-- Skip navigation for screen readers -->
+<style>
+.skip-link{position:absolute;top:-100px;left:0;background:var(--blue);color:#fff;padding:12px 20px;font-size:.9rem;font-weight:700;z-index:999;border-radius:0 0 8px 0;transition:top .15s;}
+.skip-link:focus{top:0;}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/></noscript>
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -70,7 +74,7 @@ html{scroll-behavior:smooth}
   --bg:#0b0f1a;--bg2:#111827;--bg3:#1a2236;
   --card:#141c2e;--card2:#1e2a42;
   --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.12);
-  --text:#e8edf5;--text2:#94a3b8;--text3:#64748b;
+  --text:#e8edf5;--text2:#94a3b8;--text3:#8899b0;
   --blue:#3b82f6;--blue2:#60a5fa;
   --teal:#14b8a6;--teal2:#2dd4bf;
   --amber:#f59e0b;--amber2:#fbbf24;
@@ -78,15 +82,15 @@ html{scroll-behavior:smooth}
   --purple:#8b5cf6;
   --shadow:0 24px 48px rgba(0,0,0,.4);
 }
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;}
-body::before{content:'';position:fixed;inset:0;z-index:0;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,130,246,.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(20,184,166,.05) 0%,transparent 60%);pointer-events:none;}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;isolation:isolate;overscroll-behavior-y:none;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,130,246,.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(20,184,166,.05) 0%,transparent 60%);pointer-events:none;}
 
 /* Header */
 header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(11,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);text-decoration:none;}
 .logo span{color:var(--blue2);}
 .header-nav{display:flex;align-items:center;gap:6px;}
-.nav-pill{background:none;border:1px solid var(--border);border-radius:100px;padding:6px 14px;font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--text2);text-decoration:none;transition:all .2s;white-space:nowrap;}
+.nav-pill{background:none;border:1px solid var(--border);border-radius:100px;padding:10px 16px;font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--text2);text-decoration:none;transition:background .2s,border-color .2s,color .2s;white-space:nowrap;}
 .nav-pill:hover{border-color:var(--blue);color:var(--blue2);}
 .nav-pill.cta{background:var(--blue);border-color:var(--blue);color:#fff;}
 
@@ -101,7 +105,7 @@ header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify
 .hero-left{max-width:620px;}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);border-radius:100px;padding:6px 14px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:20px;}
 .badge-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
 h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:16px;}
 h1 .grad{background:linear-gradient(135deg,var(--blue2) 0%,var(--teal2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{color:var(--text2);font-size:1rem;line-height:1.7;max-width:500px;margin-bottom:24px;}
@@ -116,13 +120,13 @@ h1 .grad{background:linear-gradient(135deg,var(--blue2) 0%,var(--teal2) 100%);-w
 .hstat-lbl{font-size:.7rem;color:var(--text3);}
 
 /* Layout */
-.layout{position:relative;z-index:5;display:grid;grid-template-columns:420px 1fr;gap:28px;max-width:1280px;margin:0 auto;padding:36px 48px;align-items:start;}
+.layout{position:relative;z-index:5;display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:28px;max-width:1280px;margin:0 auto;padding:36px 48px;align-items:start;}
 
 /* Input card */
 .input-card{background:var(--card);border:1px solid var(--border2);border-radius:18px;padding:32px;position:sticky;top:76px;box-shadow:var(--shadow);}
 .ic-title{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;}
 .loan-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:28px;}
-.lt{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;cursor:pointer;transition:all .2s;}
+.lt{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 6px;min-height:60px;box-sizing:border-box;text-align:center;cursor:pointer;transition:all .2s;}
 .lt.active{background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(20,184,166,.1));border-color:var(--blue);}
 .lt-icon{font-size:1.3rem;display:block;margin-bottom:4px;}
 .lt-name{font-size:.68rem;font-weight:700;color:var(--text2);}
@@ -139,7 +143,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--blue
 .ni{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px 16px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.92rem;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;}
 .ni:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
 .cur-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;}
-.cp{background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:7px 12px;font-size:.75rem;font-weight:700;color:var(--text2);cursor:pointer;transition:all .15s;}
+.cp{background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:12px 14px;min-height:44px;font-size:.75rem;font-weight:700;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
 .cp.active{background:rgba(59,130,246,.15);border-color:var(--blue);color:var(--blue2);}
 .int-toggle{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:4px;gap:4px;margin-bottom:22px;}
 .it-btn{flex:1;background:none;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;color:var(--text3);padding:9px;border-radius:8px;transition:all .2s;}
@@ -184,7 +188,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--blue
 .prepay-result strong{color:var(--green2);}
 .amort-card{background:var(--card);border:1px solid var(--border2);border-radius:18px;overflow:hidden;}
 .ac-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
-.toggle-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:all .15s;}
+.toggle-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
 .toggle-btn:hover{border-color:var(--border2);color:var(--text);}
 .amort-body{display:none;overflow-x:auto;}
 table{width:100%;border-collapse:collapse;}
@@ -216,7 +220,7 @@ tbody tr.yr-row td{color:var(--text);}
 .rb-low{background:rgba(34,197,94,.1);color:var(--green2);display:inline-block;padding:3px 10px;border-radius:5px;font-size:.7rem;font-weight:700;}
 .rb-mid{background:rgba(245,158,11,.1);color:var(--amber2);display:inline-block;padding:3px 10px;border-radius:5px;font-size:.7rem;font-weight:700;}
 .rb-high{background:rgba(239,68,68,.1);color:#fca5a5;display:inline-block;padding:3px 10px;border-radius:5px;font-size:.7rem;font-weight:700;}
-.calc-this{font-size:.75rem;font-weight:700;color:var(--blue2);cursor:pointer;border-bottom:1px dashed rgba(96,165,250,.3);text-decoration:none;}
+.calc-this{font-size:.75rem;font-weight:700;color:var(--blue2);cursor:pointer;border-bottom:1px dashed rgba(96,165,250,.3);text-decoration:none;display:inline-flex;align-items:center;min-height:44px;}
 .calc-this:hover{color:var(--teal2);}
 
 /* Decision cards */
@@ -245,7 +249,7 @@ tbody tr.yr-row td{color:var(--text);}
 .pt-t{background:rgba(20,184,166,.1);color:var(--teal2);}
 .prob-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:7px;line-height:1.3;}
 .prob-text{font-size:.78rem;color:var(--text2);line-height:1.6;}
-.read-link{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:700;color:var(--blue2);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;text-decoration:none;}
+.read-link{display:inline-flex;align-items:center;margin-top:12px;font-size:.72rem;font-weight:700;color:var(--blue2);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;text-decoration:none;min-height:44px;}
 
 /* Compare table */
 .compare-table{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;}
@@ -274,7 +278,7 @@ tbody tr.yr-row td{color:var(--text);}
 .blog-hub-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-.03em;margin-bottom:12px;}
 .blog-hub-header p{color:var(--text2);font-size:.95rem;max-width:600px;margin:0 auto;}
 .blog-cats{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
-.bcat{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:8px 18px;font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--text2);cursor:pointer;transition:all .2s;}
+.bcat{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:12px 18px;min-height:44px;font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--text2);cursor:pointer;transition:all .2s;}
 .bcat:hover,.bcat.active{background:rgba(59,130,246,.15);border-color:var(--blue);color:var(--blue2);}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px;}
 .blog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s;}
@@ -293,7 +297,7 @@ tbody tr.yr-row td{color:var(--text);}
 .blog-card-excerpt{font-size:.78rem;color:var(--text2);line-height:1.65;margin-bottom:14px;}
 .blog-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);}
 .blog-author{font-size:.7rem;color:var(--text3);}
-.blog-cta-link{font-size:.72rem;font-weight:700;color:var(--blue2);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;}
+.blog-cta-link{font-size:.72rem;font-weight:700;color:var(--blue2);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;}
 
 /* Article full panel */
 .article-full{display:none;background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:40px;margin-bottom:24px;}
@@ -313,7 +317,7 @@ tbody tr.yr-row td{color:var(--text);}
 .af-cta-text{font-size:.88rem;font-weight:600;color:#fff;}
 .af-cta-btn{background:#fff;color:var(--blue);border:none;border-radius:8px;padding:10px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s;}
 .af-cta-btn:hover{opacity:.9;}
-.af-close{float:right;background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:all .15s;}
+.af-close{float:right;background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
 .af-close:hover{border-color:var(--red);color:#fca5a5;}
 .load-more-wrap{text-align:center;margin-top:12px;}
 .load-more-btn{background:none;border:1px solid var(--border2);border-radius:10px;padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:all .2s;}
@@ -344,17 +348,35 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
 @keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .anim{animation:countUp .4s ease both;}
 
+
+/* ── Focus styles for keyboard nav / accessibility ── */
+input[type=range]:focus{outline:2px solid var(--blue);outline-offset:4px;}
+select:focus{outline:2px solid var(--blue);outline-offset:2px;border-color:var(--blue);}
+.cp:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.bcat:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.lt:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.nav-pill:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.read-link:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.calc-this:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.blog-cta-link:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.faq-q:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+
+
+/* Content visibility for off-screen sections */
+.blog-hub{content-visibility:auto;contain-intrinsic-size:0 3000px;}
 /* Responsive */
 @media(max-width:1100px){.layout{grid-template-columns:1fr;padding:28px 24px;}.input-card{position:static;}.footer-top{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}.problem-grid{grid-template-columns:1fr 1fr;}.decision-grid{grid-template-columns:1fr;}.faq-grid{grid-template-columns:1fr;}}
-@media(max-width:768px){header{padding:0 20px;}.breadcrumb,.hero{padding-left:20px;padding-right:20px;}.spoke,.blog-hub{padding-left:20px;padding-right:20px;}.emi-meta{grid-template-columns:1fr 1fr;}.breakdown-card{flex-direction:column;}.sh{flex-direction:column;align-items:flex-start;}footer{padding:32px 20px 24px;}.footer-top{grid-template-columns:1fr 1fr;}}
-@media(max-width:480px){.blog-grid{grid-template-columns:1fr;}.problem-grid{grid-template-columns:1fr;}.emi-meta{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}.hero-stats{display:none;}}
+@media(max-width:768px){header{padding:0 20px;}.header-nav{gap:4px;}.breadcrumb,.hero{padding-left:20px;padding-right:20px;}.spoke,.blog-hub{padding-left:20px;padding-right:20px;}.emi-meta{grid-template-columns:1fr 1fr;}.breakdown-card{flex-direction:column;}.sh{flex-direction:column;align-items:flex-start;}footer{padding:32px 20px 24px;}.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.header-nav .nav-pill:not(.cta){display:none;}.blog-grid{grid-template-columns:1fr;}.problem-grid{grid-template-columns:1fr;}.emi-meta{grid-template-columns:1fr;}.footer-top{grid-template-columns:1fr;}.hero-stats{display:none;}}
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header>
+<a href="#calculator" class="skip-link">Skip to Calculator</a>
+<header role="banner">
   <a href="/" class="logo">Dora<span>Tools</span></a>
   <nav class="header-nav" aria-label="Main navigation">
     <a href="#rate-compare" class="nav-pill">Compare Rates</a>
@@ -404,6 +426,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
   </div>
 </section>
 
+<main id="main-content">
 <!-- CALCULATOR HUB -->
 <section id="calculator" aria-labelledby="calc-heading">
 <div class="layout">
@@ -480,7 +503,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
     </div>
 
     <div class="breakdown-card">
-      <svg width="130" height="130" viewBox="0 0 130 130" aria-hidden="true" focusable="false">
+      <svg width="130" height="130" viewBox="0 0 130 130" aria-hidden="true" focusable="false" role="img">
         <circle cx="65" cy="65" r="50" fill="none" stroke="#1e2a42" stroke-width="20"/>
         <circle id="dPrincipal" cx="65" cy="65" r="50" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="0 314" transform="rotate(-90 65 65)" style="transition:stroke-dasharray .7s ease"/>
         <circle id="dInterest" cx="65" cy="65" r="50" fill="none" stroke="#14b8a6" stroke-width="20" stroke-dasharray="0 314" transform="rotate(-90 65 65)" style="transition:all .7s ease"/>
@@ -507,9 +530,9 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <p style="font-size:.8rem;color:var(--text2);margin-bottom:14px;line-height:1.6">Enter a one-time lump-sum payment to see exactly how much interest you save and how many months you cut off the loan.</p>
       <div class="pc-row">
         <label for="prepayAmt">Prepay Amount</label>
-        <input type="number" class="pc-ni" id="prepayAmt" placeholder="e.g. 10000"/>
+        <input type="number" class="pc-ni" id="prepayAmt" aria-label="Prepayment amount" placeholder="e.g. 10000"/>
         <label for="prepayMonth">After Month #</label>
-        <input type="number" class="pc-ni" id="prepayMonth" placeholder="e.g. 12"/>
+        <input type="number" class="pc-ni" id="prepayMonth" aria-label="After month number" placeholder="e.g. 12"/>
         <button class="pc-btn" id="prepayBtn">Calculate Savings</button>
       </div>
       <div class="prepay-result" id="prepayResult"></div>
@@ -521,7 +544,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
         <button class="toggle-btn" id="amortToggle">Show Table</button>
       </div>
       <div class="amort-body" id="amortBody">
-        <table aria-label="Loan amortization schedule">
+        <table aria-label="Loan amortization schedule" role="table">
           <thead><tr>
             <th scope="col">Period</th>
             <th scope="col">Payment</th>
@@ -619,37 +642,37 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <span class="prob-tag pt-r">Rejection</span>
       <h3 class="prob-title">Loan Denied Despite Good Income? The 5 Real Reasons</h3>
       <p class="prob-text">Debt-to-income ratio, credit utilization, too many recent applications, short employment history — each can trigger rejection regardless of earnings.</p>
-      <a class="read-link" onclick="openArticle(3)">Read Full Guide →</a>
+      <a class="read-link" href="#article-3" onclick="openArticle(3);return false;">Read Full Guide →</a>
     </div>
     <div class="prob-card">
       <span class="prob-tag pt-a">Missed Payment</span>
       <h3 class="prob-title">What Happens If You Miss a Payment?</h3>
       <p class="prob-text">Day 30: credit score drops 50–100 points. Day 90: serious delinquency. Day 180: collections. One missed payment stays on your credit report for 7 years.</p>
-      <a class="read-link" onclick="openArticle(8)">Read Full Guide →</a>
+      <a class="read-link" href="#article-8" onclick="openArticle(8);return false;">Read Full Guide →</a>
     </div>
     <div class="prob-card">
       <span class="prob-tag pt-g">Save Money</span>
       <h3 class="prob-title">How One Prepayment Saved $18,000 in Interest</h3>
       <p class="prob-text">A lump-sum prepayment made in the first 3 years of a mortgage can save tens of thousands. The math is almost always in your favor if there's no penalty.</p>
-      <a class="read-link" onclick="openArticle(2)">Read Full Guide →</a>
+      <a class="read-link" href="#article-2" onclick="openArticle(2);return false;">Read Full Guide →</a>
     </div>
     <div class="prob-card">
       <span class="prob-tag pt-b">Refinancing</span>
       <h3 class="prob-title">Refinancing: When It Saves Money vs When It's a Trap</h3>
       <p class="prob-text">Closing costs, break-even time, and restarted amortization can make refinancing cost more than you save. The 2% rule and break-even formula explained.</p>
-      <a class="read-link" onclick="openArticle(5)">Read Full Guide →</a>
+      <a class="read-link" href="#article-5" onclick="openArticle(5);return false;">Read Full Guide →</a>
     </div>
     <div class="prob-card">
       <span class="prob-tag pt-p">First Timer</span>
       <h3 class="prob-title">First-Time Borrower? 10 Costly Mistakes to Avoid</h3>
       <p class="prob-text">Not reading the prepayment penalty clause. Accepting the first offer. Choosing the longest tenure without running total interest math. Each is an expensive lesson.</p>
-      <a class="read-link" onclick="openArticle(7)">Read Full Guide →</a>
+      <a class="read-link" href="#article-7" onclick="openArticle(7);return false;">Read Full Guide →</a>
     </div>
     <div class="prob-card">
       <span class="prob-tag pt-t">Rate Change</span>
       <h3 class="prob-title">Rates Are Rising — How Does It Affect Your Loan?</h3>
       <p class="prob-text">Fixed-rate loans: completely unaffected. Variable/adjustable-rate loans: payment rises with each adjustment date. Here's how to calculate your new payment.</p>
-      <a class="read-link" onclick="openArticle(4)">Read Full Guide →</a>
+      <a class="read-link" href="#article-4" onclick="openArticle(4);return false;">Read Full Guide →</a>
     </div>
   </div>
 </section>
@@ -723,7 +746,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">How Loan Amortization Works — Why Your First Payment Is Almost All Interest</h3>
         <p class="blog-card-excerpt">Your first monthly payment goes 80%+ to interest and barely touches principal. Here's the math behind why — and the strategy to fight it.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(0)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-0" onclick="openArticle(0);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="carloan">
@@ -731,7 +754,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Buying a Car in 2026: Finance It or Pay Cash? Full Cost Analysis</h3>
         <p class="blog-card-excerpt">Alex had $25,000 saved and a loan offer at 7.5%. We ran the full 5-year numbers. The answer depends on one critical variable.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(1)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-1" onclick="openArticle(1);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="savings">
@@ -739,7 +762,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">One Prepayment Saved $18,000 on a Mortgage — Here's Exactly How</h3>
         <p class="blog-card-excerpt">In month 18 of a 30-year mortgage, a $15,000 prepayment eliminated 2.5 years of payments and saved $18,240 in interest. The math is striking.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(2)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-2" onclick="openArticle(2);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="credit">
@@ -747,7 +770,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Loan Application Denied? The 6 Real Reasons Lenders Won't Tell You</h3>
         <p class="blog-card-excerpt">Debt-to-income ratio, credit utilization, inquiry count, employment gaps — any one of these can sink an otherwise strong application.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(3)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-3" onclick="openArticle(3);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="basics">
@@ -755,7 +778,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Interest Rates Are Rising — How Will It Change Your Monthly Payment?</h3>
         <p class="blog-card-excerpt">Fixed-rate loans are safe. If you have a variable-rate loan, here is exactly how to calculate your new payment and whether to refinance.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(4)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-4" onclick="openArticle(4);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="mortgage">
@@ -763,7 +786,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Mortgage Refinancing in 2026: When It Saves Money and When It Costs More</h3>
         <p class="blog-card-excerpt">A lower rate looks attractive. But closing costs, break-even period, and restarted amortization can make refinancing more expensive than staying.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(5)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-5" onclick="openArticle(5);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
   </div>
@@ -775,7 +798,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Mortgage Interest Tax Deduction 2026 — Complete Guide to What You Can Claim</h3>
         <p class="blog-card-excerpt">The mortgage interest deduction can save thousands per year — but only if you itemize and only up to certain loan limits. Full 2026 guide.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(6)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-6" onclick="openArticle(6);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="personal">
@@ -783,7 +806,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">First Personal Loan? 10 Costly Mistakes to Avoid Before You Sign</h3>
         <p class="blog-card-excerpt">Origination fees, prepayment penalties, hidden APR, bundled insurance — each one is a trap you can avoid if you know where to look.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(7)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-7" onclick="openArticle(7);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="basics">
@@ -791,7 +814,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">What Happens When You Miss a Loan Payment: Day-by-Day Impact Timeline</h3>
         <p class="blog-card-excerpt">Day 30: credit bureau report. Day 90: serious delinquency. Day 180: collections. One late payment stays on your report for 7 years. Recovery roadmap inside.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(8)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-8" onclick="openArticle(8);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="mortgage">
@@ -799,7 +822,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">15-Year vs 30-Year Mortgage — The True Cost Difference in 2026</h3>
         <p class="blog-card-excerpt">On $300,000, the 30-year option costs $248,000 more in interest. But with disciplined investing, the 30-year option might actually break even. The full analysis.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(9)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-9" onclick="openArticle(9);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="savings">
@@ -807,7 +830,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Debt Snowball vs Debt Avalanche: Which Pays Off Your Loans Faster?</h3>
         <p class="blog-card-excerpt">The avalanche saves the most money mathematically. The snowball keeps you motivated. The best method is the one you'll actually follow.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(10)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-10" onclick="openArticle(10);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="carloan">
@@ -815,7 +838,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">New Car vs Used Car Loan 2026 — Which Is Cheaper Over 5 Years?</h3>
         <p class="blog-card-excerpt">A used car's higher interest rate is almost always offset by lower purchase price and slower depreciation. Full total cost of ownership comparison.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(11)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-11" onclick="openArticle(11);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
   </div>
@@ -827,7 +850,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">How to Raise Your Credit Score 100 Points in 6 Months</h3>
         <p class="blog-card-excerpt">Payment history is 35% of your score. Utilization is 30%. Targeting these two levers with a focused plan can jump your score from 620 to 720+ in 6 months.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(12)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-12" onclick="openArticle(12);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="personal">
@@ -835,7 +858,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Personal Loan vs Credit Card: Which Is Cheaper for a $5,000 Expense?</h3>
         <p class="blog-card-excerpt">"No-interest" promotional offers have a catch. Personal loan APR looks high but includes no surprises. Full 18-month cost comparison.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(13)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-13" onclick="openArticle(13);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="basics">
@@ -843,7 +866,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Fixed vs Variable Interest Rate — Which Should You Choose in 2026?</h3>
         <p class="blog-card-excerpt">Fixed rates give certainty. Variable rates start lower but can rise. In 2026's rate environment, the math clearly favors one over the other by loan type.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(14)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-14" onclick="openArticle(14);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="mortgage">
@@ -851,7 +874,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">How Much Mortgage Can You Afford? The 4 Rules Lenders Use</h3>
         <p class="blog-card-excerpt">Front-end ratio, back-end DTI, credit score thresholds, and the 28/36 rule explained — so you know exactly how much you qualify for before applying.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(15)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-15" onclick="openArticle(15);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="tax">
@@ -859,7 +882,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">Student Loan Interest Tax Deduction 2026 — Full Eligibility Guide</h3>
         <p class="blog-card-excerpt">Up to $2,500 in student loan interest is deductible without itemizing. But income phase-outs mean not everyone qualifies. Complete guide inside.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(16)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-16" onclick="openArticle(16);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
     <article class="blog-card" data-cat="basics">
@@ -867,7 +890,7 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
       <div class="blog-card-body">
         <h3 class="blog-card-title">How to Use a Loan Calculator Correctly — 5 Mistakes That Give Wrong Results</h3>
         <p class="blog-card-excerpt">Gross vs net income. Forgetting origination fees. Skipping prepayment scenarios. Each mistake produces a number useless for real-world planning.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(17)" role="button" tabindex="0">Read More →</span></div>
+        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-17" onclick="openArticle(17);return false;" role="button" tabindex="0">Read More →</span></div>
       </div>
     </article>
   </div>
@@ -1323,8 +1346,9 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
-<footer>
+<footer role="contentinfo">
   <div class="footer-top">
     <div>
       <div class="footer-brand">Dora<span>Tools</span></div>
