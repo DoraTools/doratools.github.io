@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Loan Decision Guide 2026 — Pay Off Early or Invest? | DoraTools</title>
+<meta name="description" content="Complete loan decision guide. Should you pay off your loan early or invest? Fixed vs variable rate? Flat vs reducing balance? EMI formula explained."/>
+<link rel="canonical" href="https://doratools.github.io/loan-guide.html"/>
+<meta name="robots" content="index, follow"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/style.css"/>
+<style>
+.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px;}
+.dg-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:24px;transition:border-color .2s,transform .2s;}
+.dg-card:hover{transform:translateY(-3px);}
+.dg-icon{font-size:2rem;margin-bottom:12px;}
+.dg-title{font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+.dg-text{font-size:.82rem;color:var(--text2);line-height:1.65;}
+.dg-verdict{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:6px 12px;border-radius:7px;font-size:.72rem;font-weight:700;}
+.dg-verdict.good{background:rgba(59,130,246,.1);color:var(--blue2);}
+.dg-verdict.warn{background:rgba(239,68,68,.1);color:#fca5a5;}
+.dg-verdict.neutral{background:rgba(148,163,184,.1);color:var(--text2);}
+.dg-verdict.teal{background:rgba(20,184,166,.1);color:var(--teal2);}
+.compare-table{background:var(--card);border:1px solid var(--border2);border-radius:14px;overflow:hidden;margin-bottom:40px;}
+.ct-header{display:grid;grid-template-columns:1fr 1fr 1fr;background:var(--bg2);}
+.ct-col{padding:14px 20px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);border-right:1px solid var(--border);}
+.ct-col:last-child{border-right:none;}
+.ct-row{display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--border);}
+.ct-row:hover{background:var(--bg2);}
+.ct-cell{padding:13px 20px;font-size:.83rem;color:var(--text2);border-right:1px solid var(--border);}
+.ct-cell:first-child{font-weight:700;color:var(--text);}
+.ct-cell:last-child{border-right:none;}
+.ct-cell.good{color:var(--green2);}
+.ct-cell.bad{color:#fca5a5;}
+.formula-box{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:28px;text-align:center;margin-bottom:40px;}
+.formula-main{font-family:'JetBrains Mono',monospace;font-size:clamp(1rem,2vw,1.3rem);color:var(--text);background:var(--bg2);border-radius:10px;padding:18px 24px;margin:16px 0;border:1px solid var(--border);line-height:1.7;}
+.formula-vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;text-align:left;margin-top:16px;}
+.fv-item{background:var(--bg2);border-radius:8px;padding:12px 16px;}
+.fv-var{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--blue2);margin-bottom:3px;}
+.fv-desc{font-size:.78rem;color:var(--text3);}
+@media(max-width:768px){.decision-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">Dora<span>Tools</span></a>
+  <nav class="header-nav">
+    <a href="/emi-calculator.html" class="nav-pill">EMI Calculator</a>
+    <a href="/rate-compare.html" class="nav-pill">Rates</a>
+    <a href="/loan-guide.html" class="nav-pill active">Loan Guide</a>
+    <a href="/articles/" class="nav-pill">Articles</a>
+    <a href="/faq.html" class="nav-pill">FAQ</a>
+  </nav>
+</header>
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">DoraTools</span></a><meta itemprop="position" content="1"/></li>
+    <span>›</span>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><span itemprop="name">Loan Guide</span><meta itemprop="position" content="2"/></li>
+  </ol>
+</nav>
+
+<main class="page-wrap">
+  <div class="sh">
+    <div>
+      <p class="sh-sub" style="color:var(--teal2)">Financial Decision Guide</p>
+      <h1>Should You Pay Off Your Loan Early or Invest?</h1>
+    </div>
+    <a href="/emi-calculator.html" class="btn-primary">Try the Calculator →</a>
+  </div>
+
+  <div class="decision-grid">
+    <div class="dg-card">
+      <div class="dg-icon">🏠</div>
+      <div class="dg-title">Mortgage: Keep It, Invest the Difference</div>
+      <div class="dg-text">Mortgage rates (6.5–7.5%) are historically lower than long-term stock market returns (~10% average annually). Mortgage interest deductions further reduce effective cost. Paying off a 7% mortgage aggressively instead of investing costs you the return differential — compounded over 20 years.</div>
+      <div class="dg-verdict good">✓ Verdict: Invest surplus, keep the mortgage</div>
+    </div>
+    <div class="dg-card">
+      <div class="dg-icon">🚗</div>
+      <div class="dg-title">Car Loan: Depends on Your Interest Rate</div>
+      <div class="dg-text">Below 6%: keep the loan and invest extra cash at higher returns. Above 10%: pay off aggressively — few investments reliably beat 10% after tax. Cars depreciate 15–25% in year one; you owe more than the car is worth almost immediately.</div>
+      <div class="dg-verdict neutral">✓ Verdict: Compare rate vs investment return</div>
+    </div>
+    <div class="dg-card">
+      <div class="dg-icon">💳</div>
+      <div class="dg-title">High-Interest Personal Loan: Pay Off First</div>
+      <div class="dg-text">Personal loans at 15–36% are almost never beaten by investment returns after tax. Every dollar you prepay on a 20% personal loan earns a guaranteed 20% risk-free return — better than stocks, bonds, or any savings account.</div>
+      <div class="dg-verdict warn">⚠ Verdict: Highest priority — pay off immediately</div>
+    </div>
+    <div class="dg-card">
+      <div class="dg-icon">🎓</div>
+      <div class="dg-title">Student Loan: Smart Debt with Flexibility</div>
+      <div class="dg-text">Federal student loans at 5.5–7% are among the cheapest debt available, often with income-driven repayment and forgiveness options. For private student loans above 8%, treat them like personal debt and pay aggressively.</div>
+      <div class="dg-verdict teal">✓ Verdict: Manage strategically, don't panic</div>
+    </div>
+  </div>
+
+  <div class="sh">
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;">Flat Rate vs Reducing Balance — The Hidden Cost Difference</h2>
+  </div>
+  <div class="compare-table">
+    <div class="ct-header">
+      <div class="ct-col">Feature</div>
+      <div class="ct-col" style="color:var(--blue2)">Reducing Balance ✓</div>
+      <div class="ct-col" style="color:#fca5a5">Flat Rate ✗</div>
+    </div>
+    <div class="ct-row"><div class="ct-cell">How interest is calculated</div><div class="ct-cell">On outstanding (declining) balance each month</div><div class="ct-cell">On full original principal for entire tenure</div></div>
+    <div class="ct-row"><div class="ct-cell">Used by</div><div class="ct-cell good">Most mainstream banks worldwide</div><div class="ct-cell bad">Some lenders, pawn shops, older products</div></div>
+    <div class="ct-row"><div class="ct-cell">Effective rate on 10% stated</div><div class="ct-cell good">10% actual annual cost</div><div class="ct-cell bad">~18% actual annual cost</div></div>
+    <div class="ct-row"><div class="ct-cell">$10,000 loan · 3 years · 10%</div><div class="ct-cell good">$1,616 total interest</div><div class="ct-cell bad">$3,000 total interest</div></div>
+  </div>
+  <p style="font-size:.82rem;color:var(--text3);margin-top:-28px;margin-bottom:40px;line-height:1.7;">⚠️ <strong style="color:var(--text2)">Warning:</strong> If a lender quotes "10% flat rate," the real cost is approximately 18% on a reducing balance basis. Always ask for the <strong style="color:var(--text)">APR (Annual Percentage Rate)</strong>.</p>
+
+  <div class="sh">
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:800;">The EMI Formula Explained</h2>
+  </div>
+  <div class="formula-box">
+    <p style="font-size:.88rem;color:var(--text2)">The standard amortization formula used by every bank worldwide:</p>
+    <div class="formula-main">EMI = [ P × R × (1+R)<sup>N</sup> ] ÷ [ (1+R)<sup>N</sup> − 1 ]</div>
+    <div class="formula-vars">
+      <div class="fv-item"><div class="fv-var">P = Principal</div><div class="fv-desc">Total amount borrowed</div></div>
+      <div class="fv-item"><div class="fv-var">R = Monthly Rate</div><div class="fv-desc">Annual rate ÷ 12 ÷ 100</div></div>
+      <div class="fv-item"><div class="fv-var">N = Months</div><div class="fv-desc">Tenure in years × 12</div></div>
+      <div class="fv-item"><div class="fv-var">EMI = Result</div><div class="fv-desc">Fixed monthly payment</div></div>
+    </div>
+    <div style="margin-top:20px;padding:16px;background:var(--bg2);border-radius:10px;text-align:left;">
+      <p style="font-size:.85rem;color:var(--text2);margin:0"><strong style="color:var(--text)">Example:</strong> $300,000 at 7% for 30 years → Monthly Payment = <strong style="color:var(--blue2)">$1,995.91</strong>. Total interest = <strong style="color:#fca5a5">$418,527</strong>.</p>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:16px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+    <div>
+      <h3 style="font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:8px;">Run the Numbers for Your Loan</h3>
+      <p style="font-size:.88rem;color:rgba(255,255,255,.8);">Use our calculator to see exact EMI, total interest, and prepayment savings.</p>
+    </div>
+    <a href="/emi-calculator.html" style="background:#fff;color:var(--blue);border-radius:10px;padding:14px 24px;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap;">Open Calculator →</a>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-brand">Dora<span>Tools</span></div><p class="footer-desc">Free online calculators and financial tools. No signup. No paywalls.</p></div>
+    <div class="footer-col"><h4>Calculators</h4><a href="/emi-calculator.html">EMI Calculator</a><a href="/rate-compare.html">Rate Comparison</a><a href="/loan-guide.html">Loan Guide</a></div>
+    <div class="footer-col"><h4>Learn</h4><a href="/articles/">All Articles</a><a href="/faq.html">FAQ</a></div>
+    <div class="footer-col"><h4>DoraTools</h4><a href="/">Home</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 DoraTools</span><span>Disclaimer: Results are estimates for informational purposes only.</span></div>
+</footer>
+</body>
+</html>
