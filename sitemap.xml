@@ -12,15 +12,7 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- ── Calculators Hub ── -->
-  <url>
-    <loc>https://doratools.github.io/calculators/</loc>
-    <lastmod>2026-03-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ── EMI Calculator (Primary Tool) ── -->
+  <!-- ── EMI Calculator (Main Tool Page) ── -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html</loc>
     <lastmod>2026-03-13</lastmod>
@@ -28,31 +20,38 @@
     <priority>0.95</priority>
   </url>
 
-  <!-- ── Other Calculators (add your actual URLs) ── -->
+  <!-- ── EMI Calculator Sections (anchor links — help Google index key content) ── -->
+
   <url>
-    <loc>https://doratools.github.io/sip-calculator.html</loc>
+    <loc>https://doratools.github.io/emi-calculator.html#rate-compare</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://doratools.github.io/compound-interest-calculator.html</loc>
+    <loc>https://doratools.github.io/emi-calculator.html#loan-guide</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
 
   <url>
-    <loc>https://doratools.github.io/loan-eligibility-calculator.html</loc>
+    <loc>https://doratools.github.io/emi-calculator.html#faq</loc>
     <lastmod>2026-03-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.75</priority>
   </url>
 
-  <!-- ── Blog / Article Section ── -->
+  <url>
+    <loc>https://doratools.github.io/emi-calculator.html#blog</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
 
-  <!-- Article 0: Loan Amortization -->
+  <!-- ── Blog Articles (all 18 — content exists inside emi-calculator.html) ── -->
+
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-0</loc>
     <lastmod>2026-03-01</lastmod>
@@ -60,7 +59,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 1: Finance vs Cash Car Purchase -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-1</loc>
     <lastmod>2026-02-01</lastmod>
@@ -68,7 +66,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 2: Prepayment Saved $18,000 -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-2</loc>
     <lastmod>2026-01-01</lastmod>
@@ -76,7 +73,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 3: Loan Denied Reasons -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-3</loc>
     <lastmod>2026-03-01</lastmod>
@@ -84,7 +80,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 4: Rising Interest Rates -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-4</loc>
     <lastmod>2026-02-01</lastmod>
@@ -92,7 +87,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 5: Mortgage Refinancing 2026 -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-5</loc>
     <lastmod>2026-01-01</lastmod>
@@ -100,7 +94,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 6: Mortgage Interest Tax Deduction -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-6</loc>
     <lastmod>2026-03-01</lastmod>
@@ -108,7 +101,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 7: First Personal Loan Mistakes -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-7</loc>
     <lastmod>2026-02-01</lastmod>
@@ -116,7 +108,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 8: Missed Payment Impact Timeline -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-8</loc>
     <lastmod>2026-01-01</lastmod>
@@ -124,7 +115,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 9: 15-Year vs 30-Year Mortgage -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-9</loc>
     <lastmod>2026-03-01</lastmod>
@@ -132,7 +122,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 10: Debt Snowball vs Avalanche -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-10</loc>
     <lastmod>2026-02-01</lastmod>
@@ -140,7 +129,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 11: New Car vs Used Car Loan -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-11</loc>
     <lastmod>2026-01-01</lastmod>
@@ -148,7 +136,6 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Article 12: Raise Credit Score 100 Points -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-12</loc>
     <lastmod>2026-03-01</lastmod>
@@ -156,7 +143,6 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Article 13: Personal Loan vs Credit Card -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-13</loc>
     <lastmod>2026-02-01</lastmod>
@@ -164,7 +150,6 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Article 14: Fixed vs Variable Rate 2026 -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-14</loc>
     <lastmod>2026-01-01</lastmod>
@@ -172,7 +157,6 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Article 15: How Much Mortgage Can You Afford -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-15</loc>
     <lastmod>2026-03-01</lastmod>
@@ -180,7 +164,6 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Article 16: Student Loan Tax Deduction 2026 -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-16</loc>
     <lastmod>2026-02-01</lastmod>
@@ -188,34 +171,11 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Article 17: How to Use a Loan Calculator -->
   <url>
     <loc>https://doratools.github.io/emi-calculator.html#article-17</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>
-  </url>
-
-  <!-- ── Static Pages ── -->
-  <url>
-    <loc>https://doratools.github.io/about.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/privacy-policy.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://doratools.github.io/contact.html</loc>
-    <lastmod>2026-01-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
 
 </urlset>
