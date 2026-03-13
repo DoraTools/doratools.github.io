@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="theme-color" content="#0b0f1a"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/></noscript>
+<title>About DoraTools — Free Financial Calculators</title>
+<meta name="description" content="DoraTools builds free, privacy-first financial calculators. No ads, no signup, no tracking. Learn about our mission, values, and why we built these tools."/>
+<link rel="canonical" href="https://doratools.github.io/about.html"/>
+<meta name="robots" content="index, follow, max-snippet:-1"/>
+<meta property="og:title" content="About DoraTools — Free Financial Calculators"/>
+<meta property="og:description" content="We build free, fast, privacy-first financial calculators. No ads, no signup, no tracking."/>
+<meta property="og:type" content="website"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":"Organization","@id":"https://doratools.github.io/#org","name":"DoraTools","url":"https://doratools.github.io","description":"Free online financial calculators and educational content. No signup, no ads, no data collection.","foundingDate":"2024"},
+  {"@type":"AboutPage","url":"https://doratools.github.io/about.html","name":"About DoraTools","isPartOf":{"@id":"https://doratools.github.io/#org"}},
+  {"@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"DoraTools","item":"https://doratools.github.io"},
+    {"@type":"ListItem","position":2,"name":"About","item":"https://doratools.github.io/about.html"}
+  ]}
+]}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --bg:#0b0f1a;--bg2:#111827;--bg3:#1a2236;
+  --card:#141c2e;--card2:#1e2a42;
+  --border:rgba(255,255,255,.07);--border2:rgba(255,255,255,.12);
+  --text:#e8edf5;--text2:#94a3b8;--text3:#8899b0;
+  --blue:#3b82f6;--blue2:#60a5fa;
+  --teal:#14b8a6;--teal2:#2dd4bf;
+  --amber2:#fbbf24;--green2:#4ade80;
+}
+body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;isolation:isolate;}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,130,246,.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(20,184,166,.05) 0%,transparent 60%);pointer-events:none;}
+.skip-link{position:absolute;top:-100px;left:0;background:var(--blue);color:#fff;padding:12px 20px;font-size:.9rem;font-weight:700;z-index:999;border-radius:0 0 8px 0;}
+.skip-link:focus{top:0;}
+/* ── Header ── */
+header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(11,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);text-decoration:none;}
+.logo span{color:var(--blue2);}
+.header-nav{display:flex;align-items:center;gap:6px;}
+.nav-pill{background:none;border:1px solid var(--border);border-radius:100px;padding:10px 16px;font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--text2);text-decoration:none;transition:background .2s,border-color .2s,color .2s;white-space:nowrap;min-height:40px;display:inline-flex;align-items:center;}
+.nav-pill:hover,.nav-pill.active{border-color:var(--blue);color:var(--blue2);}
+.nav-pill.cta{background:var(--blue);border-color:var(--blue);color:#fff;}
+.nav-pill:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+/* ── Breadcrumb ── */
+.breadcrumb{position:relative;z-index:5;padding:12px 48px;font-size:.78rem;color:var(--text3);border-bottom:1px solid var(--border);display:flex;align-items:center;flex-wrap:wrap;}
+.breadcrumb ol{display:flex;align-items:center;gap:8px;list-style:none;}
+.breadcrumb a{color:var(--text3);text-decoration:none;}
+.breadcrumb a:hover{color:var(--text2);}
+.breadcrumb span[aria-hidden]{margin:0 2px;}
+/* ── Page hero ── */
+.page-hero{position:relative;z-index:5;padding:56px 48px 48px;border-bottom:1px solid var(--border);}
+.page-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);border-radius:100px;padding:6px 14px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:20px;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:14px;}
+.grad{background:linear-gradient(135deg,var(--blue2),var(--teal2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.page-hero .sub{color:var(--text2);font-size:1rem;line-height:1.7;max-width:580px;}
+/* ── Content ── */
+.page-content{position:relative;z-index:5;max-width:860px;margin:0 auto;padding:52px 48px 80px;}
+.prose h2{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin:44px 0 14px;padding-top:4px;color:var(--text);}
+.prose h2:first-of-type{margin-top:0;}
+.prose h3{font-size:1rem;font-weight:700;margin:24px 0 10px;color:var(--text);}
+.prose p{font-size:.92rem;color:var(--text2);line-height:1.85;margin-bottom:16px;}
+.prose p:last-child{margin-bottom:0;}
+.prose ul,.prose ol{margin:0 0 16px 22px;}
+.prose li{font-size:.92rem;color:var(--text2);line-height:1.8;margin-bottom:5px;}
+.prose strong{color:var(--text);}
+.prose a{color:var(--blue2);text-decoration:none;border-bottom:1px solid rgba(96,165,250,.3);}
+.prose a:hover{color:var(--teal2);}
+.prose a:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.last-updated{display:block;font-size:.75rem;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-bottom:36px;}
+.info-box{background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(20,184,166,.05));border:1px solid rgba(59,130,246,.15);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.info-box p{margin:0;font-size:.88rem;}
+.warn-box{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:12px;padding:20px 24px;margin:24px 0;}
+.warn-box p{margin:0;font-size:.88rem;color:var(--text2);}
+.toc{background:var(--card);border:1px solid var(--border2);border-radius:12px;padding:22px 26px;margin-bottom:40px;}
+.toc-title{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;}
+.toc ol{margin:0 0 0 18px;}
+.toc li{margin-bottom:7px;}
+.toc a{font-size:.88rem;color:var(--blue2);text-decoration:none;border-bottom:none;}
+.toc a:hover{color:var(--teal2);}
+.anchor{display:block;visibility:hidden;margin-top:-72px;padding-top:72px;}
+/* ── Values/cards ── */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;}
+.feat-card{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:24px;}
+.feat-icon{font-size:2rem;margin-bottom:12px;}
+.feat-title{font-size:.92rem;font-weight:700;color:var(--text);margin-bottom:8px;}
+.feat-text{font-size:.82rem;color:var(--text2);line-height:1.65;}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;}
+.stat-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+.stat-num{font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--blue2);display:block;}
+.stat-lbl{font-size:.74rem;color:var(--text3);margin-top:4px;}
+/* ── Contact form ── */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.field-wrap{display:flex;flex-direction:column;gap:8px;}
+.field-wrap.full{grid-column:1/-1;}
+.field-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);}
+.field-input,.field-textarea,.field-select{background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:13px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;width:100%;}
+.field-input:focus,.field-textarea:focus,.field-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
+.field-textarea{resize:vertical;min-height:140px;line-height:1.6;}
+.field-select option{background:var(--bg2);}
+.submit-btn{background:linear-gradient(135deg,var(--blue),var(--teal));border:none;border-radius:12px;padding:16px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;cursor:pointer;transition:opacity .2s,transform .2s;box-shadow:0 8px 24px rgba(59,130,246,.3);}
+.submit-btn:hover{opacity:.9;transform:translateY(-2px);}
+.submit-btn:focus-visible{outline:2px solid var(--blue2);outline-offset:3px;}
+.success-msg{display:none;background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(20,184,166,.08));border:1px solid rgba(34,197,94,.2);border-radius:12px;padding:20px 24px;font-size:.92rem;color:var(--green2);}
+/* ── Sitemap ── */
+.sitemap-section{margin-bottom:44px;}
+.sitemap-section h2{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:800;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--border);letter-spacing:-.02em;}
+.sitemap-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+.sitemap-link-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;text-decoration:none;display:block;transition:border-color .2s,transform .2s;}
+.sitemap-link-card:hover{border-color:var(--blue);transform:translateY(-2px);}
+.sitemap-link-card:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.slc-title{font-size:.9rem;font-weight:700;color:var(--text);margin-bottom:5px;}
+.slc-desc{font-size:.78rem;color:var(--text3);line-height:1.5;}
+.slc-tag{display:inline-block;margin-top:8px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:5px;background:rgba(59,130,246,.1);color:var(--blue2);}
+/* ── Footer ── */
+footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid var(--border);padding:40px 48px 28px;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:10px;}
+.footer-brand span{color:var(--blue2);}
+.footer-desc{font-size:.8rem;color:var(--text3);line-height:1.7;}
+.footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;}
+.footer-col a{display:block;font-size:.82rem;color:var(--text3);text-decoration:none;margin-bottom:8px;transition:color .15s;padding:2px 0;}
+.footer-col a:hover{color:var(--text);}
+.footer-col a:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);font-size:.75rem;color:var(--text3);flex-wrap:wrap;gap:10px;}
+/* ── Responsive ── */
+@media(max-width:900px){.card-grid{grid-template-columns:1fr 1fr;}.stat-row{grid-template-columns:1fr 1fr;}.form-grid{grid-template-columns:1fr;}.form-grid .field-wrap.full{grid-column:1;}}
+@media(max-width:768px){header{padding:0 20px;}.header-nav .nav-pill:not(.cta){display:none;}.breadcrumb,.page-hero,.page-content{padding-left:20px;padding-right:20px;}footer{padding:32px 20px 24px;}.footer-top{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.card-grid{grid-template-columns:1fr;}.stat-row{grid-template-columns:1fr 1fr;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header role="banner">
+  <a href="/" class="logo">Dora<span>Tools</span></a>
+  <nav class="header-nav" aria-label="Main navigation">
+    <a href="/emi-calculator.html" class="nav-pill">EMI Calculator</a>
+    <a href="/about.html" class="nav-pill active">About</a>
+    <a href="/contact.html" class="nav-pill">Contact</a>
+    <a href="/emi-calculator.html" class="nav-pill cta">Try Calculator →</a>
+  </nav>
+</header>
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item"><span itemprop="name">DoraTools</span></a>
+      <meta itemprop="position" content="1"/>
+    </li>
+    <span aria-hidden="true">›</span>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">About</span>
+      <meta itemprop="position" content="2"/>
+    </li>
+  </ol>
+</nav>
+
+<div class="page-hero">
+  <div class="page-badge">Our Story</div>
+  <h1>About <span class="grad">DoraTools</span></h1>
+  <p class="sub">We build free, fast, privacy-first financial calculators — because everyone deserves clear answers about their money, without signing up or handing over their data.</p>
+</div>
+
+<main id="main-content">
+<div class="page-content">
+<article class="prose" itemscope itemtype="https://schema.org/Article">
+<meta itemprop="headline" content="About DoraTools — Free Financial Calculators"/>
+<meta itemprop="author" content="DoraTools"/>
+
+<h2>Why DoraTools Exists</h2>
+<p>Every major financial decision — a 30-year mortgage, a car loan, a child's student debt — involves a number you can calculate in seconds. Yet most people either never run that number, or they find tools buried behind sign-up walls, cluttered with ads, or designed to funnel them toward a financial product.</p>
+<p>DoraTools was built on a single premise: <strong>a free tool should actually be free</strong>. No account. No data sold. No "premium tier" that hides the amortization table. Just the calculator, the answer, and the knowledge to understand what it means.</p>
+
+<h2>What Makes Us Different</h2>
+<div class="card-grid">
+  <div class="feat-card">
+    <div class="feat-icon">🔒</div>
+    <div class="feat-title">Privacy by Default</div>
+    <p class="feat-text">Zero personal data collected. No tracking cookies. No analytics. Everything you calculate lives only in your browser and is gone when you close the tab.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon">⚡</div>
+    <div class="feat-title">Speed as Respect</div>
+    <p class="feat-text">Every page targets Lighthouse 100 on mobile and desktop. A slow tool disrespects your time. Fast, instant, no loading spinners.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon">📖</div>
+    <div class="feat-title">Education Over Sales</div>
+    <p class="feat-text">We explain the formula, show the math, and provide real-world context. The goal is financial literacy — not selling you a loan or product.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon">🌍</div>
+    <div class="feat-title">Global by Design</div>
+    <p class="feat-text">Multi-currency support. No region-locked assumptions. Our tools work for anyone making financial decisions anywhere in the world.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon">♿</div>
+    <div class="feat-title">Accessible to All</div>
+    <p class="feat-text">WCAG AA accessibility standards on every page. Keyboard navigation, screen reader support, and sufficient color contrast throughout.</p>
+  </div>
+  <div class="feat-card">
+    <div class="feat-icon">🔓</div>
+    <div class="feat-title">No Paywalls, Ever</div>
+    <p class="feat-text">Full amortization schedule, prepayment calculator, all 18 guides — completely free. We do not have a "Pro" tier. We never will.</p>
+  </div>
+</div>
+
+<h2>Our Numbers</h2>
+<div class="stat-row">
+  <div class="stat-box"><span class="stat-num">100%</span><div class="stat-lbl">Free, always</div></div>
+  <div class="stat-box"><span class="stat-num">0</span><div class="stat-lbl">Data collected</div></div>
+  <div class="stat-box"><span class="stat-num">5</span><div class="stat-lbl">Currencies supported</div></div>
+  <div class="stat-box"><span class="stat-num">18+</span><div class="stat-lbl">In-depth guides</div></div>
+</div>
+
+<h2>Our Tools</h2>
+<p>DoraTools currently provides:</p>
+<ul>
+  <li><strong><a href="/emi-calculator.html">EMI &amp; Loan Payment Calculator</a></strong> — Calculate monthly payments, full amortization schedules, and prepayment savings for mortgage, car, personal, and student loans. Supports USD, GBP, EUR, CAD, and AUD.</li>
+</ul>
+<p>More calculators are in active development. Have a suggestion for a tool that would genuinely help people? <a href="/contact.html">We want to hear it.</a></p>
+
+<h2>A Note on Financial Advice</h2>
+<div class="warn-box">
+  <p>⚠️ <strong>DoraTools provides calculations, not financial advice.</strong> All outputs are mathematical estimates based on the inputs you provide. Actual loan terms, rates, and payments vary by lender, credit profile, and jurisdiction. Consult a qualified financial advisor before making significant financial decisions. See our full <a href="/disclaimer.html">Financial Disclaimer</a>.</p>
+</div>
+
+</article>
+</div>
+</main>
+<footer role="contentinfo">
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">Dora<span>Tools</span></div>
+      <p class="footer-desc">Free online financial calculators. No signup, no ads, no data collection. Built to help you make smarter money decisions.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="/emi-calculator.html">EMI Calculator</a>
+      <a href="/emi-calculator.html#rate-compare">Rate Comparison</a>
+      <a href="/emi-calculator.html#blog">Loan Guides</a>
+      <a href="/emi-calculator.html#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/about.html">About Us</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/disclaimer.html">Disclaimer</a>
+      <a href="/sitemap.html">Sitemap</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-of-service.html">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 DoraTools · Free Online Financial Calculators</span>
+    <span>Results are estimates only · Not financial advice · <a href="/disclaimer.html" style="color:inherit">See disclaimer</a></span>
+  </div>
+</footer>
+</body>
+</html>
