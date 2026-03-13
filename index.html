@@ -16,6 +16,13 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Free EMI & Loan Payment Calculator 2026 | DoraTools"/>
 
+<!-- FIX 1: Optimized font loading — preconnect + preload + async swap, reduced weights -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'" fetchpriority="low"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/></noscript>
+
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -56,18 +63,17 @@
 }
 </script>
 
-<!-- Skip navigation for screen readers -->
 <style>
+/* FIX 1b: Critical font stack fallbacks so text is readable before fonts load */
+:root{
+  --font-sans:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-mono:'JetBrains Mono','Courier New',monospace;
+}
+
 .skip-link{position:absolute;top:-100px;left:0;background:var(--blue);color:#fff;padding:12px 20px;font-size:.9rem;font-weight:700;z-index:999;border-radius:0 0 8px 0;transition:top .15s;}
 .skip-link:focus{top:0;}
-</style>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/></noscript>
 
-<style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 :root{
@@ -82,12 +88,12 @@ html{scroll-behavior:smooth}
   --purple:#8b5cf6;
   --shadow:0 24px 48px rgba(0,0,0,.4);
 }
-body{background:var(--bg);color:var(--text);font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.6;isolation:isolate;overscroll-behavior-y:none;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-sans);min-height:100vh;overflow-x:hidden;line-height:1.6;isolation:isolate;overscroll-behavior-y:none;}
 body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse 80% 60% at 20% 10%,rgba(59,130,246,.07) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 80%,rgba(20,184,166,.05) 0%,transparent 60%);pointer-events:none;}
 
 /* Header */
 header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:60px;background:rgba(11,15,26,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
-.logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--text);text-decoration:none;}
+.logo{font-family:var(--font-serif);font-size:1.3rem;font-weight:700;color:var(--text);text-decoration:none;}
 .logo span{color:var(--blue2);}
 .header-nav{display:flex;align-items:center;gap:6px;}
 .nav-pill{background:none;border:1px solid var(--border);border-radius:100px;padding:10px 16px;font-size:.75rem;font-weight:600;letter-spacing:.04em;color:var(--text2);text-decoration:none;transition:background .2s,border-color .2s,color .2s;white-space:nowrap;}
@@ -106,17 +112,17 @@ header{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.25);border-radius:100px;padding:6px 14px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue2);margin-bottom:20px;}
 .badge-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.4)}}
-h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:16px;}
+h1{font-family:var(--font-serif);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:16px;}
 h1 .grad{background:linear-gradient(135deg,var(--blue2) 0%,var(--teal2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .hero-sub{color:var(--text2);font-size:1rem;line-height:1.7;max-width:500px;margin-bottom:24px;}
 .hero-trust{display:flex;gap:10px;flex-wrap:wrap;}
 .trust-chip{background:var(--card);border:1px solid var(--border2);border-radius:8px;padding:8px 14px;font-size:.78rem;}
-.trust-chip strong{color:var(--teal2);font-family:'JetBrains Mono',monospace;}
+.trust-chip strong{color:var(--teal2);font-family:var(--font-mono);}
 .trust-chip span{color:var(--text3);margin-left:4px;}
 .hero-stats{display:flex;flex-direction:column;gap:10px;min-width:200px;}
 .hstat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:12px;}
 .hstat-icon{font-size:1.4rem;}
-.hstat-val{font-size:1.1rem;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--text);}
+.hstat-val{font-size:1.1rem;font-weight:700;font-family:var(--font-mono);color:var(--text);}
 .hstat-lbl{font-size:.7rem;color:var(--text3);}
 
 /* Layout */
@@ -130,25 +136,25 @@ h1 .grad{background:linear-gradient(135deg,var(--blue2) 0%,var(--teal2) 100%);-w
 .lt.active{background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(20,184,166,.1));border-color:var(--blue);}
 .lt-icon{font-size:1.3rem;display:block;margin-bottom:4px;}
 .lt-name{font-size:.68rem;font-weight:700;color:var(--text2);}
-.lt-rate{font-size:.6rem;color:var(--text3);font-family:'JetBrains Mono',monospace;}
+.lt-rate{font-size:.6rem;color:var(--text3);font-family:var(--font-mono);}
 .lt.active .lt-name{color:var(--blue2);}
 .lt.active .lt-rate{color:var(--teal2);}
 .field{margin-bottom:22px;}
 .fl{display:flex;justify-content:space-between;align-items:baseline;font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
-.fv{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--blue2);font-weight:500;text-transform:none;letter-spacing:-.01em;}
+.fv{font-family:var(--font-mono);font-size:.85rem;color:var(--blue2);font-weight:500;text-transform:none;letter-spacing:-.01em;}
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--bg3);border-radius:2px;outline:none;cursor:pointer;}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--blue);border:3px solid var(--bg);border-radius:50%;cursor:pointer;box-shadow:0 0 0 2px rgba(59,130,246,.3);transition:transform .15s;}
 input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.25);}
 input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--blue);border:3px solid var(--bg);border-radius:50%;cursor:pointer;}
-.ni{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px 16px;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.92rem;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;}
+.ni{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px 16px;margin-top:10px;font-family:var(--font-mono);font-size:.92rem;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;}
 .ni:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1);}
 .cur-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;}
 .cp{background:var(--bg2);border:1px solid var(--border);border-radius:7px;padding:12px 14px;min-height:44px;font-size:.75rem;font-weight:700;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
 .cp.active{background:rgba(59,130,246,.15);border-color:var(--blue);color:var(--blue2);}
 .int-toggle{display:flex;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:4px;gap:4px;margin-bottom:22px;}
-.it-btn{flex:1;background:none;border:none;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;color:var(--text3);padding:9px;border-radius:8px;transition:all .2s;}
+.it-btn{flex:1;background:none;border:none;cursor:pointer;font-family:var(--font-sans);font-size:.78rem;font-weight:700;color:var(--text3);padding:9px;border-radius:8px;transition:all .2s;}
 .it-btn.active{background:var(--card2);color:var(--text);}
-.calc-btn{width:100%;margin-top:6px;background:linear-gradient(135deg,var(--blue),var(--teal));border:none;border-radius:12px;padding:16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(59,130,246,.3);transition:all .2s;}
+.calc-btn{width:100%;margin-top:6px;background:linear-gradient(135deg,var(--blue),var(--teal));border:none;border-radius:12px;padding:16px;font-family:var(--font-sans);font-size:.92rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#fff;cursor:pointer;box-shadow:0 8px 24px rgba(59,130,246,.3);transition:all .2s;}
 .calc-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(59,130,246,.4);}
 
 /* Results */
@@ -156,21 +162,25 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--blue
 .emi-showcase{background:linear-gradient(135deg,var(--bg3) 0%,var(--card2) 100%);border:1px solid var(--border2);border-radius:18px;padding:32px;position:relative;overflow:hidden;}
 .emi-showcase::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(59,130,246,.12) 0%,transparent 70%);pointer-events:none;}
 .es-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:10px;}
-.es-value{font-family:'JetBrains Mono',monospace;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:500;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-.03em;}
+.es-value{font-family:var(--font-mono);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:500;color:var(--text);line-height:1;margin-bottom:6px;letter-spacing:-.03em;}
 .es-sym{font-size:.45em;color:var(--text3);vertical-align:super;margin-right:3px;}
 .es-sub{font-size:.82rem;color:var(--text3);}
 .emi-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;}
 .em-item{background:rgba(0,0,0,.2);border-radius:10px;padding:14px;border:1px solid var(--border);}
 .em-lbl{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:5px;}
-.em-val{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--text);font-weight:500;}
+.em-val{font-family:var(--font-mono);font-size:.95rem;color:var(--text);font-weight:500;}
 .em-val.red{color:#fca5a5;}
 .em-val.amber{color:var(--amber2);}
 .breakdown-card{background:var(--card);border:1px solid var(--border2);border-radius:18px;padding:24px;display:flex;gap:24px;align-items:center;}
+
+/* FIX 3: Prevent SVG layout shift */
+.breakdown-card svg{min-width:130px;min-height:130px;width:130px;height:130px;}
+
 .bdl-title{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}
 .bdl-item{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
 .bdl-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
 .bdl-label{font-size:.78rem;font-weight:600;color:var(--text2);margin-bottom:2px;}
-.bdl-pct{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--text3);}
+.bdl-pct{font-family:var(--font-mono);font-size:.75rem;color:var(--text3);}
 .insight-box{background:linear-gradient(135deg,rgba(20,184,166,.08),rgba(34,197,94,.05));border:1px solid rgba(20,184,166,.2);border-radius:14px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px;}
 .insight-icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
 .insight-title{font-size:.82rem;font-weight:700;color:var(--teal2);margin-bottom:5px;}
@@ -180,32 +190,32 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--blue
 .pc-title{font-size:.82rem;font-weight:700;margin-bottom:10px;color:var(--text);}
 .pc-row{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
 .pc-row label{font-size:.75rem;color:var(--text3);font-weight:600;white-space:nowrap;}
-.pc-ni{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 14px;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--text);outline:none;width:150px;transition:border-color .2s;}
+.pc-ni{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:9px 14px;font-family:var(--font-mono);font-size:.85rem;color:var(--text);outline:none;width:150px;transition:border-color .2s;}
 .pc-ni:focus{border-color:var(--teal);}
-.pc-btn{background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.3);border-radius:8px;padding:9px 16px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;color:var(--teal2);cursor:pointer;transition:all .2s;}
+.pc-btn{background:rgba(20,184,166,.15);border:1px solid rgba(20,184,166,.3);border-radius:8px;padding:9px 16px;font-family:var(--font-sans);font-size:.78rem;font-weight:700;color:var(--teal2);cursor:pointer;transition:all .2s;}
 .pc-btn:hover{background:rgba(20,184,166,.25);}
 .prepay-result{display:none;font-size:.82rem;line-height:1.8;}
 .prepay-result strong{color:var(--green2);}
 .amort-card{background:var(--card);border:1px solid var(--border2);border-radius:18px;overflow:hidden;}
 .ac-header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--border);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);}
-.toggle-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
+.toggle-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
 .toggle-btn:hover{border-color:var(--border2);color:var(--text);}
 .amort-body{display:none;overflow-x:auto;}
 table{width:100%;border-collapse:collapse;}
 thead th{background:var(--bg2);padding:10px 16px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);text-align:right;border-bottom:1px solid var(--border);}
 thead th:first-child{text-align:left;}
-tbody td{padding:9px 16px;font-family:'JetBrains Mono',monospace;font-size:.78rem;text-align:right;border-bottom:1px solid var(--border);color:var(--text2);}
-tbody td:first-child{text-align:left;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:var(--text);}
+tbody td{padding:9px 16px;font-family:var(--font-mono);font-size:.78rem;text-align:right;border-bottom:1px solid var(--border);color:var(--text2);}
+tbody td:first-child{text-align:left;font-family:var(--font-sans);font-weight:700;color:var(--text);}
 tbody tr:hover{background:var(--bg2);}
 tbody tr.yr-row{background:rgba(59,130,246,.04);}
 tbody tr.yr-row td{color:var(--text);}
-.show-more{width:100%;padding:13px;background:none;border:none;border-top:1px solid var(--border);font-family:'Plus Jakarta Sans',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);cursor:pointer;transition:background .15s;}
+.show-more{width:100%;padding:13px;background:none;border:none;border-top:1px solid var(--border);font-family:var(--font-sans);font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);cursor:pointer;transition:background .15s;}
 .show-more:hover{background:var(--bg2);color:var(--blue2);}
 
 /* Spokes */
 .spoke{position:relative;z-index:5;max-width:1280px;margin:0 auto;padding:0 48px 64px;}
 .sh{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:12px;}
-.sh h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;}
+.sh h2{font-family:var(--font-serif);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;}
 .sh-badge{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:4px 12px;}
 .sh-sub{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;}
 .view-all{font-size:.78rem;font-weight:700;color:var(--blue2);text-decoration:none;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}
@@ -266,16 +276,17 @@ tbody tr.yr-row td{color:var(--text);}
 
 /* Formula */
 .formula-box{background:var(--card);border:1px solid var(--border2);border-radius:14px;padding:28px;text-align:center;}
-.formula-main{font-family:'JetBrains Mono',monospace;font-size:clamp(1rem,2vw,1.3rem);color:var(--text);background:var(--bg2);border-radius:10px;padding:18px 24px;margin:16px 0;border:1px solid var(--border);line-height:1.7;}
+.formula-main{font-family:var(--font-mono);font-size:clamp(1rem,2vw,1.3rem);color:var(--text);background:var(--bg2);border-radius:10px;padding:18px 24px;margin:16px 0;border:1px solid var(--border);line-height:1.7;}
 .formula-vars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;text-align:left;margin-top:16px;}
 .fv-item{background:var(--bg2);border-radius:8px;padding:12px 16px;}
-.fv-var{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--blue2);margin-bottom:3px;}
+.fv-var{font-family:var(--font-mono);font-size:.9rem;color:var(--blue2);margin-bottom:3px;}
 .fv-desc{font-size:.78rem;color:var(--text3);}
 
 /* Blog hub */
-.blog-hub{position:relative;z-index:5;max-width:1280px;margin:0 auto;padding:0 48px 80px;}
+/* FIX 4a: content-visibility on blog hub */
+.blog-hub{position:relative;z-index:5;max-width:1280px;margin:0 auto;padding:0 48px 80px;content-visibility:auto;contain-intrinsic-size:0 3000px;}
 .blog-hub-header{text-align:center;margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border);}
-.blog-hub-header h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-.03em;margin-bottom:12px;}
+.blog-hub-header h2{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;letter-spacing:-.03em;margin-bottom:12px;}
 .blog-hub-header p{color:var(--text2);font-size:.95rem;max-width:600px;margin:0 auto;}
 .blog-cats{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:36px;}
 .bcat{background:var(--card);border:1px solid var(--border);border-radius:100px;padding:12px 18px;min-height:44px;font-size:.78rem;font-weight:700;letter-spacing:.05em;color:var(--text2);cursor:pointer;transition:all .2s;}
@@ -299,12 +310,12 @@ tbody tr.yr-row td{color:var(--text);}
 .blog-author{font-size:.7rem;color:var(--text3);}
 .blog-cta-link{font-size:.72rem;font-weight:700;color:var(--blue2);letter-spacing:.04em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;min-height:44px;}
 
-/* Article full panel */
-.article-full{display:none;background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:40px;margin-bottom:24px;}
+/* FIX 4b: content-visibility on hidden article panels */
+.article-full{display:none;background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:40px;margin-bottom:24px;content-visibility:auto;contain-intrinsic-size:0 800px;}
 .article-full.open{display:block;animation:fadeUp .3s ease;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .af-header{margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--border);}
-.af-title{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:12px 0 8px;}
+.af-title{font-family:var(--font-serif);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:12px 0 8px;}
 .af-meta{font-size:.75rem;color:var(--text3);}
 .af-body h3{font-size:1rem;font-weight:700;margin:22px 0 10px;color:var(--text);}
 .af-body p{font-size:.88rem;color:var(--text2);line-height:1.8;margin-bottom:14px;}
@@ -315,18 +326,18 @@ tbody tr.yr-row td{color:var(--text);}
 .af-highlight p{margin:0;font-size:.85rem;}
 .af-cta-box{background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:12px;padding:20px 24px;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
 .af-cta-text{font-size:.88rem;font-weight:600;color:#fff;}
-.af-cta-btn{background:#fff;color:var(--blue);border:none;border-radius:8px;padding:10px 20px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s;}
+.af-cta-btn{background:#fff;color:var(--blue);border:none;border-radius:8px;padding:10px 20px;font-family:var(--font-sans);font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s;}
 .af-cta-btn:hover{opacity:.9;}
-.af-close{float:right;background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
+.af-close{float:right;background:none;border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-family:var(--font-sans);font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
 .af-close:hover{border-color:var(--red);color:#fca5a5;}
 .load-more-wrap{text-align:center;margin-top:12px;}
-.load-more-btn{background:none;border:1px solid var(--border2);border-radius:10px;padding:13px 32px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:all .2s;}
+.load-more-btn{background:none;border:1px solid var(--border2);border-radius:10px;padding:13px 32px;font-family:var(--font-sans);font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);cursor:pointer;transition:all .2s;}
 .load-more-btn:hover{border-color:var(--blue);color:var(--blue2);}
 
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;}
 .faq-item{border-bottom:1px solid var(--border);}
-.faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:16px 0;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .15s;}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:16px 0;font-family:var(--font-sans);font-size:.88rem;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .15s;}
 .faq-q:hover{color:var(--blue2);}
 .faq-a{display:none;padding:0 0 16px;font-size:.82rem;color:var(--text2);line-height:1.75;}
 .faq-item.open .faq-q{color:var(--blue2);}
@@ -337,7 +348,7 @@ tbody tr.yr-row td{color:var(--text);}
 /* Footer */
 footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid var(--border);padding:40px 48px 28px;}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px;}
-.footer-brand{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:10px;}
+.footer-brand{font-family:var(--font-serif);font-size:1.2rem;font-weight:700;margin-bottom:10px;}
 .footer-brand span{color:var(--blue2);}
 .footer-desc{font-size:.8rem;color:var(--text3);line-height:1.7;}
 .footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:14px;}
@@ -348,23 +359,13 @@ footer{position:relative;z-index:5;background:var(--bg2);border-top:1px solid va
 @keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 .anim{animation:countUp .4s ease both;}
 
-
-/* ── Focus styles for keyboard nav / accessibility ── */
+/* Focus styles */
 input[type=range]:focus{outline:2px solid var(--blue);outline-offset:4px;}
 select:focus{outline:2px solid var(--blue);outline-offset:2px;border-color:var(--blue);}
-.cp:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.bcat:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.lt:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.nav-pill:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.read-link:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.calc-this:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.blog-cta-link:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-.faq-q:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
-button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
+.cp:focus-visible,.bcat:focus-visible,.lt:focus-visible,.nav-pill:focus-visible,
+.read-link:focus-visible,.calc-this:focus-visible,.blog-cta-link:focus-visible,
+.faq-q:focus-visible,button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
 
-
-/* Content visibility for off-screen sections */
-.blog-hub{content-visibility:auto;contain-intrinsic-size:0 3000px;}
 /* Responsive */
 @media(max-width:1100px){.layout{grid-template-columns:1fr;padding:28px 24px;}.input-card{position:static;}.footer-top{grid-template-columns:1fr 1fr;}}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}.problem-grid{grid-template-columns:1fr 1fr;}.decision-grid{grid-template-columns:1fr;}.faq-grid{grid-template-columns:1fr;}}
@@ -374,7 +375,6 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
 </head>
 <body>
 
-<!-- HEADER -->
 <a href="#calculator" class="skip-link">Skip to Calculator</a>
 <header role="banner">
   <a href="/" class="logo">Dora<span>Tools</span></a>
@@ -387,7 +387,6 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
   </nav>
 </header>
 
-<!-- BREADCRUMB — semantic for Google -->
 <nav aria-label="Breadcrumb" class="breadcrumb">
   <ol itemscope itemtype="https://schema.org/BreadcrumbList">
     <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -407,7 +406,6 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
   </ol>
 </nav>
 
-<!-- HERO -->
 <section class="hero" aria-labelledby="hero-h1">
   <div class="hero-left">
     <div class="hero-badge"><span class="badge-dot"></span>Updated 2026 · Free · No Signup Required</div>
@@ -427,7 +425,6 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
 </section>
 
 <main id="main-content">
-<!-- CALCULATOR HUB -->
 <section id="calculator" aria-labelledby="calc-heading">
 <div class="layout">
 
@@ -480,7 +477,7 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
       <input type="range" id="tenureSlider" min="1" max="30" step="1" value="20" aria-label="Loan tenure"/>
       <div style="display:flex;gap:8px;margin-top:10px">
         <input type="number" class="ni" id="tenureInput" value="20" min="1" style="flex:1" aria-label="Enter tenure"/>
-        <select id="tenureUnit" aria-label="Tenure unit" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;color:var(--text);outline:none;cursor:pointer;min-width:100px;transition:border-color .2s;">
+        <select id="tenureUnit" aria-label="Tenure unit" style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:11px 14px;font-family:var(--font-sans);font-size:.82rem;font-weight:700;color:var(--text);outline:none;cursor:pointer;min-width:100px;transition:border-color .2s;">
           <option value="years">Years</option>
           <option value="months">Months</option>
         </select>
@@ -638,50 +635,18 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     </div>
   </div>
   <div class="problem-grid">
-    <div class="prob-card">
-      <span class="prob-tag pt-r">Rejection</span>
-      <h3 class="prob-title">Loan Denied Despite Good Income? The 5 Real Reasons</h3>
-      <p class="prob-text">Debt-to-income ratio, credit utilization, too many recent applications, short employment history — each can trigger rejection regardless of earnings.</p>
-      <a class="read-link" href="#article-3" onclick="openArticle(3);return false;">Read Full Guide →</a>
-    </div>
-    <div class="prob-card">
-      <span class="prob-tag pt-a">Missed Payment</span>
-      <h3 class="prob-title">What Happens If You Miss a Payment?</h3>
-      <p class="prob-text">Day 30: credit score drops 50–100 points. Day 90: serious delinquency. Day 180: collections. One missed payment stays on your credit report for 7 years.</p>
-      <a class="read-link" href="#article-8" onclick="openArticle(8);return false;">Read Full Guide →</a>
-    </div>
-    <div class="prob-card">
-      <span class="prob-tag pt-g">Save Money</span>
-      <h3 class="prob-title">How One Prepayment Saved $18,000 in Interest</h3>
-      <p class="prob-text">A lump-sum prepayment made in the first 3 years of a mortgage can save tens of thousands. The math is almost always in your favor if there's no penalty.</p>
-      <a class="read-link" href="#article-2" onclick="openArticle(2);return false;">Read Full Guide →</a>
-    </div>
-    <div class="prob-card">
-      <span class="prob-tag pt-b">Refinancing</span>
-      <h3 class="prob-title">Refinancing: When It Saves Money vs When It's a Trap</h3>
-      <p class="prob-text">Closing costs, break-even time, and restarted amortization can make refinancing cost more than you save. The 2% rule and break-even formula explained.</p>
-      <a class="read-link" href="#article-5" onclick="openArticle(5);return false;">Read Full Guide →</a>
-    </div>
-    <div class="prob-card">
-      <span class="prob-tag pt-p">First Timer</span>
-      <h3 class="prob-title">First-Time Borrower? 10 Costly Mistakes to Avoid</h3>
-      <p class="prob-text">Not reading the prepayment penalty clause. Accepting the first offer. Choosing the longest tenure without running total interest math. Each is an expensive lesson.</p>
-      <a class="read-link" href="#article-7" onclick="openArticle(7);return false;">Read Full Guide →</a>
-    </div>
-    <div class="prob-card">
-      <span class="prob-tag pt-t">Rate Change</span>
-      <h3 class="prob-title">Rates Are Rising — How Does It Affect Your Loan?</h3>
-      <p class="prob-text">Fixed-rate loans: completely unaffected. Variable/adjustable-rate loans: payment rises with each adjustment date. Here's how to calculate your new payment.</p>
-      <a class="read-link" href="#article-4" onclick="openArticle(4);return false;">Read Full Guide →</a>
-    </div>
+    <div class="prob-card"><span class="prob-tag pt-r">Rejection</span><h3 class="prob-title">Loan Denied Despite Good Income? The 5 Real Reasons</h3><p class="prob-text">Debt-to-income ratio, credit utilization, too many recent applications, short employment history — each can trigger rejection regardless of earnings.</p><a class="read-link" href="#article-3" onclick="openArticle(3);return false;">Read Full Guide →</a></div>
+    <div class="prob-card"><span class="prob-tag pt-a">Missed Payment</span><h3 class="prob-title">What Happens If You Miss a Payment?</h3><p class="prob-text">Day 30: credit score drops 50–100 points. Day 90: serious delinquency. Day 180: collections. One missed payment stays on your credit report for 7 years.</p><a class="read-link" href="#article-8" onclick="openArticle(8);return false;">Read Full Guide →</a></div>
+    <div class="prob-card"><span class="prob-tag pt-g">Save Money</span><h3 class="prob-title">How One Prepayment Saved $18,000 in Interest</h3><p class="prob-text">A lump-sum prepayment made in the first 3 years of a mortgage can save tens of thousands. The math is almost always in your favor if there's no penalty.</p><a class="read-link" href="#article-2" onclick="openArticle(2);return false;">Read Full Guide →</a></div>
+    <div class="prob-card"><span class="prob-tag pt-b">Refinancing</span><h3 class="prob-title">Refinancing: When It Saves Money vs When It's a Trap</h3><p class="prob-text">Closing costs, break-even time, and restarted amortization can make refinancing cost more than you save. The 2% rule and break-even formula explained.</p><a class="read-link" href="#article-5" onclick="openArticle(5);return false;">Read Full Guide →</a></div>
+    <div class="prob-card"><span class="prob-tag pt-p">First Timer</span><h3 class="prob-title">First-Time Borrower? 10 Costly Mistakes to Avoid</h3><p class="prob-text">Not reading the prepayment penalty clause. Accepting the first offer. Choosing the longest tenure without running total interest math. Each is an expensive lesson.</p><a class="read-link" href="#article-7" onclick="openArticle(7);return false;">Read Full Guide →</a></div>
+    <div class="prob-card"><span class="prob-tag pt-t">Rate Change</span><h3 class="prob-title">Rates Are Rising — How Does It Affect Your Loan?</h3><p class="prob-text">Fixed-rate loans: completely unaffected. Variable/adjustable-rate loans: payment rises with each adjustment date. Here's how to calculate your new payment.</p><a class="read-link" href="#article-4" onclick="openArticle(4);return false;">Read Full Guide →</a></div>
   </div>
 </section>
 
 <!-- SPOKE 4 — Flat vs Reducing -->
 <section class="spoke" aria-labelledby="flatred-h2">
-  <div class="sh">
-    <h2 id="flatred-h2">Flat Rate vs Reducing Balance — The Hidden Cost Difference</h2>
-  </div>
+  <div class="sh"><h2 id="flatred-h2">Flat Rate vs Reducing Balance — The Hidden Cost Difference</h2></div>
   <div class="compare-table" role="table" aria-label="Flat rate vs reducing balance interest comparison">
     <div class="ct-header" role="row">
       <div class="ct-col" role="columnheader">Feature</div>
@@ -699,9 +664,7 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
 
 <!-- SPOKE 5 — Formula -->
 <section class="spoke" aria-labelledby="formula-h2">
-  <div class="sh">
-    <h2 id="formula-h2">The EMI Formula — How Loan Payment Calculations Work</h2>
-  </div>
+  <div class="sh"><h2 id="formula-h2">The EMI Formula — How Loan Payment Calculations Work</h2></div>
   <div class="formula-box">
     <p style="font-size:.85rem;color:var(--text2)">The standard amortization formula used by every bank and financial institution worldwide:</p>
     <div class="formula-main" aria-label="EMI formula: EMI equals P times R times (1 plus R) to the power N, divided by (1 plus R) to the power N minus 1">
@@ -719,9 +682,8 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
   </div>
 </section>
 
-<!-- BLOG HUB — all text is real semantic HTML, fully crawlable -->
+<!-- BLOG HUB -->
 <section class="blog-hub" id="blog" aria-labelledby="blog-h2">
-
   <div class="blog-hub-header">
     <p style="font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);margin-bottom:12px">📚 Knowledge Hub — 18 In-Depth Guides</p>
     <h2 id="blog-h2">Complete Loan & EMI Learning Center</h2>
@@ -739,184 +701,44 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <button class="bcat" role="tab" data-cat="tax">Tax & Legal</button>
   </div>
 
-  <!-- Grid Row 1 -->
   <div class="blog-grid" id="blogGrid1">
-    <article class="blog-card" data-cat="basics">
-      <div class="blog-card-top"><span class="blog-tag bt-b">Loan Basics</span><span class="blog-read">5 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">How Loan Amortization Works — Why Your First Payment Is Almost All Interest</h3>
-        <p class="blog-card-excerpt">Your first monthly payment goes 80%+ to interest and barely touches principal. Here's the math behind why — and the strategy to fight it.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-0" onclick="openArticle(0);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="carloan">
-      <div class="blog-card-top"><span class="blog-tag bt-a">Car Loan</span><span class="blog-read">7 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Buying a Car in 2026: Finance It or Pay Cash? Full Cost Analysis</h3>
-        <p class="blog-card-excerpt">Alex had $25,000 saved and a loan offer at 7.5%. We ran the full 5-year numbers. The answer depends on one critical variable.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-1" onclick="openArticle(1);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="savings">
-      <div class="blog-card-top"><span class="blog-tag bt-g">Save Money</span><span class="blog-read">4 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">One Prepayment Saved $18,000 on a Mortgage — Here's Exactly How</h3>
-        <p class="blog-card-excerpt">In month 18 of a 30-year mortgage, a $15,000 prepayment eliminated 2.5 years of payments and saved $18,240 in interest. The math is striking.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-2" onclick="openArticle(2);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="credit">
-      <div class="blog-card-top"><span class="blog-tag bt-r">Credit Score</span><span class="blog-read">6 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Loan Application Denied? The 6 Real Reasons Lenders Won't Tell You</h3>
-        <p class="blog-card-excerpt">Debt-to-income ratio, credit utilization, inquiry count, employment gaps — any one of these can sink an otherwise strong application.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-3" onclick="openArticle(3);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="basics">
-      <div class="blog-card-top"><span class="blog-tag bt-a">Interest Rates</span><span class="blog-read">5 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Interest Rates Are Rising — How Will It Change Your Monthly Payment?</h3>
-        <p class="blog-card-excerpt">Fixed-rate loans are safe. If you have a variable-rate loan, here is exactly how to calculate your new payment and whether to refinance.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-4" onclick="openArticle(4);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="mortgage">
-      <div class="blog-card-top"><span class="blog-tag bt-t">Mortgage</span><span class="blog-read">8 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Mortgage Refinancing in 2026: When It Saves Money and When It Costs More</h3>
-        <p class="blog-card-excerpt">A lower rate looks attractive. But closing costs, break-even period, and restarted amortization can make refinancing more expensive than staying.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-5" onclick="openArticle(5);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
+    <article class="blog-card" data-cat="basics"><div class="blog-card-top"><span class="blog-tag bt-b">Loan Basics</span><span class="blog-read">5 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">How Loan Amortization Works — Why Your First Payment Is Almost All Interest</h3><p class="blog-card-excerpt">Your first monthly payment goes 80%+ to interest and barely touches principal. Here's the math behind why — and the strategy to fight it.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(0)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="carloan"><div class="blog-card-top"><span class="blog-tag bt-a">Car Loan</span><span class="blog-read">7 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Buying a Car in 2026: Finance It or Pay Cash? Full Cost Analysis</h3><p class="blog-card-excerpt">Alex had $25,000 saved and a loan offer at 7.5%. We ran the full 5-year numbers. The answer depends on one critical variable.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(1)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="savings"><div class="blog-card-top"><span class="blog-tag bt-g">Save Money</span><span class="blog-read">4 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">One Prepayment Saved $18,000 on a Mortgage — Here's Exactly How</h3><p class="blog-card-excerpt">In month 18 of a 30-year mortgage, a $15,000 prepayment eliminated 2.5 years of payments and saved $18,240 in interest. The math is striking.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(2)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="credit"><div class="blog-card-top"><span class="blog-tag bt-r">Credit Score</span><span class="blog-read">6 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Loan Application Denied? The 6 Real Reasons Lenders Won't Tell You</h3><p class="blog-card-excerpt">Debt-to-income ratio, credit utilization, inquiry count, employment gaps — any one of these can sink an otherwise strong application.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(3)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="basics"><div class="blog-card-top"><span class="blog-tag bt-a">Interest Rates</span><span class="blog-read">5 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Interest Rates Are Rising — How Will It Change Your Monthly Payment?</h3><p class="blog-card-excerpt">Fixed-rate loans are safe. If you have a variable-rate loan, here is exactly how to calculate your new payment and whether to refinance.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(4)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="mortgage"><div class="blog-card-top"><span class="blog-tag bt-t">Mortgage</span><span class="blog-read">8 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Mortgage Refinancing in 2026: When It Saves Money and When It Costs More</h3><p class="blog-card-excerpt">A lower rate looks attractive. But closing costs, break-even period, and restarted amortization can make refinancing more expensive than staying.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(5)" role="button" tabindex="0">Read More →</span></div></div></article>
   </div>
 
-  <!-- Grid Row 2 -->
   <div class="blog-grid" id="blogGrid2">
-    <article class="blog-card" data-cat="tax">
-      <div class="blog-card-top"><span class="blog-tag bt-p">Tax & Legal</span><span class="blog-read">6 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Mortgage Interest Tax Deduction 2026 — Complete Guide to What You Can Claim</h3>
-        <p class="blog-card-excerpt">The mortgage interest deduction can save thousands per year — but only if you itemize and only up to certain loan limits. Full 2026 guide.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-6" onclick="openArticle(6);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="personal">
-      <div class="blog-card-top"><span class="blog-tag bt-r">Personal Loan</span><span class="blog-read">5 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">First Personal Loan? 10 Costly Mistakes to Avoid Before You Sign</h3>
-        <p class="blog-card-excerpt">Origination fees, prepayment penalties, hidden APR, bundled insurance — each one is a trap you can avoid if you know where to look.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-7" onclick="openArticle(7);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="basics">
-      <div class="blog-card-top"><span class="blog-tag bt-b">Loan Basics</span><span class="blog-read">4 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">What Happens When You Miss a Loan Payment: Day-by-Day Impact Timeline</h3>
-        <p class="blog-card-excerpt">Day 30: credit bureau report. Day 90: serious delinquency. Day 180: collections. One late payment stays on your report for 7 years. Recovery roadmap inside.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-8" onclick="openArticle(8);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="mortgage">
-      <div class="blog-card-top"><span class="blog-tag bt-t">Mortgage</span><span class="blog-read">7 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">15-Year vs 30-Year Mortgage — The True Cost Difference in 2026</h3>
-        <p class="blog-card-excerpt">On $300,000, the 30-year option costs $248,000 more in interest. But with disciplined investing, the 30-year option might actually break even. The full analysis.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-9" onclick="openArticle(9);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="savings">
-      <div class="blog-card-top"><span class="blog-tag bt-g">Save Money</span><span class="blog-read">5 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Debt Snowball vs Debt Avalanche: Which Pays Off Your Loans Faster?</h3>
-        <p class="blog-card-excerpt">The avalanche saves the most money mathematically. The snowball keeps you motivated. The best method is the one you'll actually follow.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-10" onclick="openArticle(10);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="carloan">
-      <div class="blog-card-top"><span class="blog-tag bt-a">Car Loan</span><span class="blog-read">6 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">New Car vs Used Car Loan 2026 — Which Is Cheaper Over 5 Years?</h3>
-        <p class="blog-card-excerpt">A used car's higher interest rate is almost always offset by lower purchase price and slower depreciation. Full total cost of ownership comparison.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-11" onclick="openArticle(11);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
+    <article class="blog-card" data-cat="tax"><div class="blog-card-top"><span class="blog-tag bt-p">Tax & Legal</span><span class="blog-read">6 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Mortgage Interest Tax Deduction 2026 — Complete Guide to What You Can Claim</h3><p class="blog-card-excerpt">The mortgage interest deduction can save thousands per year — but only if you itemize and only up to certain loan limits. Full 2026 guide.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(6)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="personal"><div class="blog-card-top"><span class="blog-tag bt-r">Personal Loan</span><span class="blog-read">5 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">First Personal Loan? 10 Costly Mistakes to Avoid Before You Sign</h3><p class="blog-card-excerpt">Origination fees, prepayment penalties, hidden APR, bundled insurance — each one is a trap you can avoid if you know where to look.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(7)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="basics"><div class="blog-card-top"><span class="blog-tag bt-b">Loan Basics</span><span class="blog-read">4 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">What Happens When You Miss a Loan Payment: Day-by-Day Impact Timeline</h3><p class="blog-card-excerpt">Day 30: credit bureau report. Day 90: serious delinquency. Day 180: collections. One late payment stays on your report for 7 years. Recovery roadmap inside.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(8)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="mortgage"><div class="blog-card-top"><span class="blog-tag bt-t">Mortgage</span><span class="blog-read">7 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">15-Year vs 30-Year Mortgage — The True Cost Difference in 2026</h3><p class="blog-card-excerpt">On $300,000, the 30-year option costs $248,000 more in interest. But with disciplined investing, the 30-year option might actually break even. The full analysis.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(9)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="savings"><div class="blog-card-top"><span class="blog-tag bt-g">Save Money</span><span class="blog-read">5 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Debt Snowball vs Debt Avalanche: Which Pays Off Your Loans Faster?</h3><p class="blog-card-excerpt">The avalanche saves the most money mathematically. The snowball keeps you motivated. The best method is the one you'll actually follow.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(10)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="carloan"><div class="blog-card-top"><span class="blog-tag bt-a">Car Loan</span><span class="blog-read">6 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">New Car vs Used Car Loan 2026 — Which Is Cheaper Over 5 Years?</h3><p class="blog-card-excerpt">A used car's higher interest rate is almost always offset by lower purchase price and slower depreciation. Full total cost of ownership comparison.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(11)" role="button" tabindex="0">Read More →</span></div></div></article>
   </div>
 
-  <!-- Grid Row 3 — Load More -->
   <div class="blog-grid" id="blogGrid3" style="display:none">
-    <article class="blog-card" data-cat="credit">
-      <div class="blog-card-top"><span class="blog-tag bt-r">Credit Score</span><span class="blog-read">5 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">How to Raise Your Credit Score 100 Points in 6 Months</h3>
-        <p class="blog-card-excerpt">Payment history is 35% of your score. Utilization is 30%. Targeting these two levers with a focused plan can jump your score from 620 to 720+ in 6 months.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-12" onclick="openArticle(12);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="personal">
-      <div class="blog-card-top"><span class="blog-tag bt-r">Personal Loan</span><span class="blog-read">4 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Personal Loan vs Credit Card: Which Is Cheaper for a $5,000 Expense?</h3>
-        <p class="blog-card-excerpt">"No-interest" promotional offers have a catch. Personal loan APR looks high but includes no surprises. Full 18-month cost comparison.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-13" onclick="openArticle(13);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="basics">
-      <div class="blog-card-top"><span class="blog-tag bt-a">Interest Types</span><span class="blog-read">6 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Fixed vs Variable Interest Rate — Which Should You Choose in 2026?</h3>
-        <p class="blog-card-excerpt">Fixed rates give certainty. Variable rates start lower but can rise. In 2026's rate environment, the math clearly favors one over the other by loan type.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-14" onclick="openArticle(14);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="mortgage">
-      <div class="blog-card-top"><span class="blog-tag bt-t">Mortgage</span><span class="blog-read">8 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">How Much Mortgage Can You Afford? The 4 Rules Lenders Use</h3>
-        <p class="blog-card-excerpt">Front-end ratio, back-end DTI, credit score thresholds, and the 28/36 rule explained — so you know exactly how much you qualify for before applying.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" href="#article-15" onclick="openArticle(15);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="tax">
-      <div class="blog-card-top"><span class="blog-tag bt-p">Tax & Legal</span><span class="blog-read">5 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">Student Loan Interest Tax Deduction 2026 — Full Eligibility Guide</h3>
-        <p class="blog-card-excerpt">Up to $2,500 in student loan interest is deductible without itemizing. But income phase-outs mean not everyone qualifies. Complete guide inside.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" href="#article-16" onclick="openArticle(16);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
-    <article class="blog-card" data-cat="basics">
-      <div class="blog-card-top"><span class="blog-tag bt-b">How To</span><span class="blog-read">4 min</span></div>
-      <div class="blog-card-body">
-        <h3 class="blog-card-title">How to Use a Loan Calculator Correctly — 5 Mistakes That Give Wrong Results</h3>
-        <p class="blog-card-excerpt">Gross vs net income. Forgetting origination fees. Skipping prepayment scenarios. Each mistake produces a number useless for real-world planning.</p>
-        <div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" href="#article-17" onclick="openArticle(17);return false;" role="button" tabindex="0">Read More →</span></div>
-      </div>
-    </article>
+    <article class="blog-card" data-cat="credit"><div class="blog-card-top"><span class="blog-tag bt-r">Credit Score</span><span class="blog-read">5 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">How to Raise Your Credit Score 100 Points in 6 Months</h3><p class="blog-card-excerpt">Payment history is 35% of your score. Utilization is 30%. Targeting these two levers with a focused plan can jump your score from 620 to 720+ in 6 months.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(12)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="personal"><div class="blog-card-top"><span class="blog-tag bt-r">Personal Loan</span><span class="blog-read">4 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Personal Loan vs Credit Card: Which Is Cheaper for a $5,000 Expense?</h3><p class="blog-card-excerpt">"No-interest" promotional offers have a catch. Personal loan APR looks high but includes no surprises. Full 18-month cost comparison.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(13)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="basics"><div class="blog-card-top"><span class="blog-tag bt-a">Interest Types</span><span class="blog-read">6 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Fixed vs Variable Interest Rate — Which Should You Choose in 2026?</h3><p class="blog-card-excerpt">Fixed rates give certainty. Variable rates start lower but can rise. In 2026's rate environment, the math clearly favors one over the other by loan type.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(14)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="mortgage"><div class="blog-card-top"><span class="blog-tag bt-t">Mortgage</span><span class="blog-read">8 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">How Much Mortgage Can You Afford? The 4 Rules Lenders Use</h3><p class="blog-card-excerpt">Front-end ratio, back-end DTI, credit score thresholds, and the 28/36 rule explained — so you know exactly how much you qualify for before applying.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Mar 2026</span><span class="blog-cta-link" onclick="openArticle(15)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="tax"><div class="blog-card-top"><span class="blog-tag bt-p">Tax & Legal</span><span class="blog-read">5 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">Student Loan Interest Tax Deduction 2026 — Full Eligibility Guide</h3><p class="blog-card-excerpt">Up to $2,500 in student loan interest is deductible without itemizing. But income phase-outs mean not everyone qualifies. Complete guide inside.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Feb 2026</span><span class="blog-cta-link" onclick="openArticle(16)" role="button" tabindex="0">Read More →</span></div></div></article>
+    <article class="blog-card" data-cat="basics"><div class="blog-card-top"><span class="blog-tag bt-b">How To</span><span class="blog-read">4 min</span></div><div class="blog-card-body"><h3 class="blog-card-title">How to Use a Loan Calculator Correctly — 5 Mistakes That Give Wrong Results</h3><p class="blog-card-excerpt">Gross vs net income. Forgetting origination fees. Skipping prepayment scenarios. Each mistake produces a number useless for real-world planning.</p><div class="blog-card-footer"><span class="blog-author">DoraTools · Jan 2026</span><span class="blog-cta-link" onclick="openArticle(17)" role="button" tabindex="0">Read More →</span></div></div></article>
   </div>
 
   <div class="load-more-wrap">
     <button class="load-more-btn" id="loadMoreBtn" onclick="loadMoreBlogs()">Load 6 More Articles ↓</button>
   </div>
 
-  <!-- ═══════════════════════════════════════════
-    FULL ARTICLE BODIES
-    All text is real semantic HTML.
-    Google Googlebot reads and indexes every word.
-    Each article uses Schema.org Article markup.
-    Each has a CTA that deeplinks into the calculator.
-  ═══════════════════════════════════════════ -->
-
+  <!-- ARTICLES -->
   <article class="article-full" id="article-0" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="headline" content="How Loan Amortization Works — Why Your First Payment Is Almost All Interest"/>
     <meta itemprop="datePublished" content="2026-03-01"/>
     <meta itemprop="author" content="DoraTools"/>
     <button class="af-close" onclick="closeArticle(0)" aria-label="Close article">✕ Close</button>
-    <div class="af-header">
-      <span class="blog-tag bt-b">Loan Basics</span>
-      <h2 class="af-title" itemprop="name">How Loan Amortization Works — Why Your First Payment Is Almost All Interest</h2>
-      <p class="af-meta">DoraTools · March 2026 · 5 min read</p>
-    </div>
+    <div class="af-header"><span class="blog-tag bt-b">Loan Basics</span><h2 class="af-title" itemprop="name">How Loan Amortization Works — Why Your First Payment Is Almost All Interest</h2><p class="af-meta">DoraTools · March 2026 · 5 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Take a $200,000 mortgage at 7% for 30 years. Your monthly payment is $1,330.60 — every month, same amount. But look at what's happening <em>inside</em> that payment in Month 1 versus Month 360.</p>
       <h3>The Amortization Reality</h3>
@@ -935,56 +757,35 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
       <h3>The Math Behind the Magic</h3>
       <p>Interest component of any EMI = Outstanding Balance × Monthly Rate. Since the balance is highest on day one, interest is highest on day one. It decreases every single month as your balance falls. This is the mathematical reality — not a trick — but knowing it puts the power of timing entirely in your hands.</p>
     </div>
-    <div class="af-cta-box">
-      <span class="af-cta-text">See your exact interest/principal split, month by month →</span>
-      <button class="af-cta-btn" onclick="closeArticle(0);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Open EMI Calculator</button>
-    </div>
+    <div class="af-cta-box"><span class="af-cta-text">See your exact interest/principal split, month by month →</span><button class="af-cta-btn" onclick="closeArticle(0);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Open EMI Calculator</button></div>
   </article>
 
   <article class="article-full" id="article-1" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="headline" content="Buying a Car in 2026: Finance It or Pay Cash? Full Cost Analysis"/>
-    <meta itemprop="datePublished" content="2026-02-01"/>
     <button class="af-close" onclick="closeArticle(1)">✕ Close</button>
     <div class="af-header"><span class="blog-tag bt-a">Car Loan</span><h2 class="af-title">Buying a Car in 2026: Finance It or Pay Cash?</h2><p class="af-meta">DoraTools · February 2026 · 7 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Alex has $25,000 saved and is looking at a $28,000 car. The dealer offers 7.5% financing for 5 years. His savings account pays 4.8%. The question: drain savings and pay cash, or take the loan?</p>
-      <h3>Option A: Pay Cash</h3>
-      <p>Pay $28,000 upfront. No monthly payment, no interest. Total car cost: $28,000. But Alex loses $25,000 working in savings at 4.8% for 5 years — that's <strong>$31,545</strong> he would have had. Opportunity cost: $6,545.</p>
-      <h3>Option B: Finance at 7.5%</h3>
-      <p>Finance $28,000 at 7.5% for 5 years = EMI $559/month. Total interest paid: <strong>$5,540</strong>. His $25,000 stays in savings and grows to $31,545. Net effective cost of car = $33,540 (loan total) − $6,545 (investment growth) = <strong>$26,995</strong>.</p>
+      <h3>Option A: Pay Cash</h3><p>Pay $28,000 upfront. No monthly payment, no interest. Total car cost: $28,000. But Alex loses $25,000 working in savings at 4.8% for 5 years — that's <strong>$31,545</strong> he would have had. Opportunity cost: $6,545.</p>
+      <h3>Option B: Finance at 7.5%</h3><p>Finance $28,000 at 7.5% for 5 years = EMI $559/month. Total interest paid: <strong>$5,540</strong>. His $25,000 stays in savings and grows to $31,545. Net effective cost of car = $33,540 (loan total) − $6,545 (investment growth) = <strong>$26,995</strong>.</p>
       <div class="af-highlight"><p>⚖️ <strong>Verdict for Alex:</strong> Financing costs $5,540 in interest. But keeping savings invested "earns" $6,545. Taking the loan makes Alex $1,005 richer — in this scenario. This only works if he keeps the savings actually invested, not spent.</p></div>
-      <h3>The Crossover Rate</h3>
-      <p><strong>Loan rate below investment return:</strong> Finance, keep cash working.<br/><strong>Loan rate above investment return:</strong> Pay cash. Paying 15% to earn 5% is a losing trade every time.<br/>At current rates, the crossover is roughly 6.5%. Above this, cash usually wins.</p>
-      <h3>When Cash Always Wins</h3>
-      <ul>
-        <li>Poor credit means rate of 15–20% — always pay cash</li>
-        <li>You'd spend the savings instead of investing them</li>
-        <li>Buying a used car where rates jump to 12–18%</li>
-        <li>No emergency fund — the EMI obligation creates dangerous fragility</li>
-      </ul>
+      <h3>The Crossover Rate</h3><p><strong>Loan rate below investment return:</strong> Finance, keep cash working.<br/><strong>Loan rate above investment return:</strong> Pay cash. Paying 15% to earn 5% is a losing trade every time.<br/>At current rates, the crossover is roughly 6.5%. Above this, cash usually wins.</p>
+      <h3>When Cash Always Wins</h3><ul><li>Poor credit means rate of 15–20% — always pay cash</li><li>You'd spend the savings instead of investing them</li><li>Buying a used car where rates jump to 12–18%</li><li>No emergency fund — the EMI obligation creates dangerous fragility</li></ul>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate your exact car loan EMI and total interest →</span><button class="af-cta-btn" onclick="closeArticle(1);setAndCalc(28000,7.5,60);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Car Loan</button></div>
   </article>
 
   <article class="article-full" id="article-2" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="headline" content="One Prepayment Saved $18,000 on a Mortgage — Here's Exactly How"/>
-    <meta itemprop="datePublished" content="2026-01-01"/>
     <button class="af-close" onclick="closeArticle(2)">✕ Close</button>
     <div class="af-header"><span class="blog-tag bt-g">Save Money</span><h2 class="af-title">One Prepayment Saved $18,000 on a Mortgage — Here's Exactly How</h2><p class="af-meta">DoraTools · January 2026 · 4 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>In month 18 of a 30-year $280,000 mortgage at 6.8%, a $15,000 tax refund sat in a checking account. The choice: redecorate the living room, or pay down the mortgage. We ran the numbers.</p>
-      <h3>The Prepayment Math</h3>
-      <p>Outstanding balance at month 18: ~$277,500. A $15,000 prepayment applied to principal eliminates $15,000 of the highest-interest portion of the loan schedule. Result: the loan closes <strong>2 years and 4 months early</strong>, saving <strong>$18,240 in total interest</strong>.</p>
+      <h3>The Prepayment Math</h3><p>Outstanding balance at month 18: ~$277,500. A $15,000 prepayment applied to principal eliminates $15,000 of the highest-interest portion of the loan schedule. Result: the loan closes <strong>2 years and 4 months early</strong>, saving <strong>$18,240 in total interest</strong>.</p>
       <p>That is a guaranteed, risk-free, tax-free return of <strong>121.6% on the $15,000 investment</strong> — no stock market volatility, no sequence risk, no taxes owed on the "gain."</p>
       <div class="af-highlight"><p>💰 <strong>Compare:</strong> A savings account at 5% would grow $15,000 to $19,144 in 5 years — a gain of $4,144. The mortgage prepayment "earns" $18,240 — more than 4× as much. Even factoring in lost mortgage tax deductions, prepayment wins decisively.</p></div>
-      <h3>The Rules to Check First</h3>
-      <ul>
-        <li><strong>Prepayment penalty:</strong> Check your loan documents. Modern mortgages typically have none, but some carry a 2–3 year lock-in period.</li>
-        <li><strong>Apply to principal only:</strong> Tell your servicer in writing to apply the payment to outstanding principal — not future monthly payments. Otherwise it may be credited incorrectly.</li>
-        <li><strong>Request updated schedule:</strong> After prepaying, ask for a new amortization schedule showing the revised payoff date and interest savings.</li>
-      </ul>
-      <h3>When to Prepay vs When to Invest</h3>
-      <p>Prepay if: mortgage rate exceeds safe investment returns after tax, or you want guaranteed risk-free savings. Invest instead if: employer retirement match is available (100% return), or market returns reliably exceed your loan rate. Most financial planners recommend doing both simultaneously.</p>
+      <h3>The Rules to Check First</h3><ul><li><strong>Prepayment penalty:</strong> Check your loan documents. Modern mortgages typically have none, but some carry a 2–3 year lock-in period.</li><li><strong>Apply to principal only:</strong> Tell your servicer in writing to apply the payment to outstanding principal — not future monthly payments.</li><li><strong>Request updated schedule:</strong> After prepaying, ask for a new amortization schedule showing the revised payoff date and interest savings.</li></ul>
+      <h3>When to Prepay vs When to Invest</h3><p>Prepay if: mortgage rate exceeds safe investment returns after tax, or you want guaranteed risk-free savings. Invest instead if: employer retirement match is available (100% return), or market returns reliably exceed your loan rate.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Find out how much YOUR prepayment saves →</span><button class="af-cta-btn" onclick="closeArticle(2);document.getElementById('prepaySection').scrollIntoView({behavior:'smooth'})">Prepayment Calculator</button></div>
   </article>
@@ -995,18 +796,12 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-r">Credit Score</span><h2 class="af-title">Loan Application Denied? The 6 Real Reasons Lenders Won't Tell You</h2><p class="af-meta">DoraTools · March 2026 · 6 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Sarah earns $120,000 a year and was denied a $35,000 personal loan. The rejection letter said "unable to meet creditworthiness requirements." No detail. Here are the six most common hidden reasons — in order of how frequently they kill applications.</p>
-      <h3>1. Debt-to-Income Ratio Too High (Most Common)</h3>
-      <p>DTI = all monthly debt payments ÷ gross monthly income. Most lenders cap this at 36–43%. Sarah's existing car loan, student loan, and credit card minimums consumed 48% of her income. The new loan would push DTI to 54%. Denied — regardless of income level.</p>
-      <h3>2. Credit Score Below Threshold</h3>
-      <p>Most personal loan lenders require 660+. Prime rates require 720+. A score of 695 may be approved at one lender but disqualifying at another. Always check minimum score requirements before applying.</p>
-      <h3>3. Too Many Recent Hard Inquiries</h3>
-      <p>Every loan application creates a hard inquiry that drops your score 5–10 points. Five applications in 60 days signals financial distress — lenders see this pattern and reject automatically at most institutions.</p>
-      <h3>4. Short Employment History</h3>
-      <p>Less than 2 years at current employer raises risk flags. Self-employed borrowers need 2 years of tax returns proving stable income. Frequent job changes — even with salary increases — hurt applications.</p>
-      <h3>5. Insufficient Credit History</h3>
-      <p>High income with no borrowing history is paradoxically difficult. Lenders have no evidence of repayment behavior. A 2-year-old secured credit card with perfect history outweighs no history at all.</p>
-      <h3>6. Document or Information Mismatch</h3>
-      <p>Any discrepancy between application and supporting documents — income, employer, name spelling — triggers automatic rejection at most automated underwriting systems.</p>
+      <h3>1. Debt-to-Income Ratio Too High (Most Common)</h3><p>DTI = all monthly debt payments ÷ gross monthly income. Most lenders cap this at 36–43%. Sarah's existing car loan, student loan, and credit card minimums consumed 48% of her income. The new loan would push DTI to 54%. Denied — regardless of income level.</p>
+      <h3>2. Credit Score Below Threshold</h3><p>Most personal loan lenders require 660+. Prime rates require 720+. A score of 695 may be approved at one lender but disqualifying at another. Always check minimum score requirements before applying.</p>
+      <h3>3. Too Many Recent Hard Inquiries</h3><p>Every loan application creates a hard inquiry that drops your score 5–10 points. Five applications in 60 days signals financial distress — lenders see this pattern and reject automatically at most institutions.</p>
+      <h3>4. Short Employment History</h3><p>Less than 2 years at current employer raises risk flags. Self-employed borrowers need 2 years of tax returns proving stable income. Frequent job changes — even with salary increases — hurt applications.</p>
+      <h3>5. Insufficient Credit History</h3><p>High income with no borrowing history is paradoxically difficult. Lenders have no evidence of repayment behavior. A 2-year-old secured credit card with perfect history outweighs no history at all.</p>
+      <h3>6. Document or Information Mismatch</h3><p>Any discrepancy between application and supporting documents — income, employer, name spelling — triggers automatic rejection at most automated underwriting systems.</p>
       <div class="af-highlight"><p>✅ <strong>Sarah's Fix:</strong> Paid down her car loan to reduce DTI to 38%, waited 6 months for score to recover from the inquiry cluster, and reapplied to a different lender. Approved.</p></div>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate an affordable EMI that fits your DTI limit →</span><button class="af-cta-btn" onclick="closeArticle(3);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate EMI</button></div>
@@ -1018,15 +813,11 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-a">Interest Rates</span><h2 class="af-title">Interest Rates Are Rising — How Will It Change Your Monthly Payment?</h2><p class="af-meta">DoraTools · February 2026 · 5 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Rates rise. Headlines say "loans getting more expensive." But will your monthly payment actually change — and by how much? The answer depends entirely on your loan type.</p>
-      <h3>Fixed-Rate Loans: Completely Unaffected</h3>
-      <p>If you locked in a fixed rate on your mortgage, car loan, or personal loan, rising rates do not change your payment by one cent. Your rate was contractually fixed at signing and cannot be changed by the lender unilaterally.</p>
-      <h3>Variable/Adjustable-Rate Loans: Direct Impact</h3>
-      <p>Adjustable-rate mortgages (ARMs) and variable-rate personal loans are pegged to benchmark rates (Prime Rate, SOFR, or similar). When these benchmarks rise, your rate adjusts at your next scheduled reset date.</p>
-      <h3>How to Calculate Your New Payment</h3>
-      <p>Use this calculator exactly as you would for a new loan: enter your current outstanding balance as the loan amount, your new interest rate, and remaining months as the tenure. The result is your new monthly payment.</p>
+      <h3>Fixed-Rate Loans: Completely Unaffected</h3><p>If you locked in a fixed rate on your mortgage, car loan, or personal loan, rising rates do not change your payment by one cent. Your rate was contractually fixed at signing and cannot be changed by the lender unilaterally.</p>
+      <h3>Variable/Adjustable-Rate Loans: Direct Impact</h3><p>Adjustable-rate mortgages (ARMs) and variable-rate personal loans are pegged to benchmark rates (Prime Rate, SOFR, or similar). When these benchmarks rise, your rate adjusts at your next scheduled reset date.</p>
+      <h3>How to Calculate Your New Payment</h3><p>Use this calculator exactly as you would for a new loan: enter your current outstanding balance as the loan amount, your new interest rate, and remaining months as the tenure. The result is your new monthly payment.</p>
       <div class="af-highlight"><p>📌 <strong>Example:</strong> $250,000 remaining balance, 20 years left. Rate rises from 5% to 7%. Monthly payment jumps from $1,649 to $1,938 — an increase of $289/month or $3,468 per year.</p></div>
-      <h3>Should You Refinance to Fixed Rate?</h3>
-      <p>Divide total refinancing costs by your monthly payment savings. If break-even is under 24 months and you plan to stay in the loan, locking in a fixed rate when variable rates are peaking makes strong financial sense.</p>
+      <h3>Should You Refinance to Fixed Rate?</h3><p>Divide total refinancing costs by your monthly payment savings. If break-even is under 24 months and you plan to stay in the loan, locking in a fixed rate when variable rates are peaking makes strong financial sense.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Recalculate your payment at the new interest rate →</span><button class="af-cta-btn" onclick="closeArticle(4);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Recalculate Now</button></div>
   </article>
@@ -1037,21 +828,11 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-t">Mortgage</span><h2 class="af-title">Mortgage Refinancing in 2026: When It Saves Money and When It Costs More</h2><p class="af-meta">DoraTools · January 2026 · 8 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Current mortgage: 8.5%. New offer: 7.2%. That 1.3% difference is $97,000 in saved interest on a $350,000 loan with 22 years remaining. But what does the refinance itself cost?</p>
-      <h3>The Hidden Costs of Refinancing</h3>
-      <ul>
-        <li><strong>Closing costs:</strong> Typically 2–5% of loan = $7,000–$17,500</li>
-        <li><strong>Origination fee:</strong> 0.5–1.5% = $1,750–$5,250</li>
-        <li><strong>Appraisal:</strong> $400–$800</li>
-        <li><strong>Title insurance:</strong> $500–$2,000</li>
-        <li><strong>Typical total cost:</strong> $10,000–$25,000</li>
-      </ul>
-      <h3>The Break-Even Formula</h3>
-      <p>Break-even months = Total refinancing cost ÷ Monthly payment reduction. If refinancing costs $12,000 and saves $340/month: break-even = 35 months (~3 years). If you stay in the loan beyond 35 months, you come out ahead.</p>
+      <h3>The Hidden Costs of Refinancing</h3><ul><li><strong>Closing costs:</strong> Typically 2–5% of loan = $7,000–$17,500</li><li><strong>Origination fee:</strong> 0.5–1.5% = $1,750–$5,250</li><li><strong>Appraisal:</strong> $400–$800</li><li><strong>Title insurance:</strong> $500–$2,000</li><li><strong>Typical total cost:</strong> $10,000–$25,000</li></ul>
+      <h3>The Break-Even Formula</h3><p>Break-even months = Total refinancing cost ÷ Monthly payment reduction. If refinancing costs $12,000 and saves $340/month: break-even = 35 months (~3 years). If you stay in the loan beyond 35 months, you come out ahead.</p>
       <div class="af-highlight"><p>✅ <strong>Refinancing makes sense when:</strong> rate drops at least 0.75%, remaining tenure exceeds 10 years, you plan to stay past break-even point, and closing costs are under 3% of loan amount.</p></div>
-      <h3>The Tenure Reset Trap</h3>
-      <p>Refinancing a 22-years-remaining mortgage into a new 30-year term reduces monthly payment but adds 8 years of obligations. Even at a lower rate, total interest paid may be higher. Always refinance into a tenure equal to or shorter than your remaining original term.</p>
-      <h3>Negotiate Before Refinancing</h3>
-      <p>Call your current lender first and say: "I have a lower rate offer from another lender. Can you match it?" Lenders often reduce rates 0.25–0.5% for loyal customers at zero cost to you — saving the entire refinancing fee instantly.</p>
+      <h3>The Tenure Reset Trap</h3><p>Refinancing a 22-years-remaining mortgage into a new 30-year term reduces monthly payment but adds 8 years of obligations. Even at a lower rate, total interest paid may be higher. Always refinance into a tenure equal to or shorter than your remaining original term.</p>
+      <h3>Negotiate Before Refinancing</h3><p>Call your current lender first and say: "I have a lower rate offer from another lender. Can you match it?" Lenders often reduce rates 0.25–0.5% for loyal customers at zero cost to you — saving the entire refinancing fee instantly.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Compare current vs refinanced payment →</span><button class="af-cta-btn" onclick="closeArticle(5);setAndCalc(350000,7.2,264);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Run Numbers</button></div>
   </article>
@@ -1062,15 +843,11 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-p">Tax &amp; Legal</span><h2 class="af-title">Mortgage Interest Tax Deduction 2026 — Complete Guide to What You Can Claim</h2><p class="af-meta">DoraTools · March 2026 · 6 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Mortgage interest is one of the largest potential deductions available to homeowners — but most people either claim it incorrectly or don't realize they need to choose between itemizing and taking the standard deduction.</p>
-      <h3>The Core Rule</h3>
-      <p>Mortgage interest is deductible on loans up to $750,000 (for loans originated after December 2017). For loans before that date, the limit is $1 million. This deduction is only available when you <strong>itemize deductions</strong> — not when taking the standard deduction.</p>
-      <h3>Is Itemizing Worth It?</h3>
-      <p>The 2024 standard deduction is $14,600 (single) / $29,200 (married filing jointly). Add your mortgage interest + property taxes + charitable contributions. If this total exceeds the standard deduction, itemize. Otherwise, take the standard.</p>
+      <h3>The Core Rule</h3><p>Mortgage interest is deductible on loans up to $750,000 (for loans originated after December 2017). For loans before that date, the limit is $1 million. This deduction is only available when you <strong>itemize deductions</strong> — not when taking the standard deduction.</p>
+      <h3>Is Itemizing Worth It?</h3><p>The 2024 standard deduction is $14,600 (single) / $29,200 (married filing jointly). Add your mortgage interest + property taxes + charitable contributions. If this total exceeds the standard deduction, itemize. Otherwise, take the standard.</p>
       <div class="af-highlight"><p>📊 <strong>Worked example:</strong> $300,000 mortgage at 7%. Year 1 interest ≈ $20,900. Add $5,000 property tax + $2,500 charitable = $28,400 itemized. Vs. $29,200 standard deduction — the standard wins here by $800. Run your own numbers before deciding.</p></div>
-      <h3>Mortgage Points Are Also Deductible</h3>
-      <p>Discount points paid to reduce your mortgage rate are deductible in the year of purchase for a home acquisition loan. For refinancing, they must be spread over the life of the loan — not taken all in year one.</p>
-      <h3>Home Equity Loan Interest</h3>
-      <p>Interest on home equity loans is only deductible if used to "buy, build, or substantially improve" the property securing the loan. Using HELOC funds for a vacation, car purchase, or debt consolidation makes the interest non-deductible under post-2018 rules.</p>
+      <h3>Mortgage Points Are Also Deductible</h3><p>Discount points paid to reduce your mortgage rate are deductible in the year of purchase for a home acquisition loan. For refinancing, they must be spread over the life of the loan — not taken all in year one.</p>
+      <h3>Home Equity Loan Interest</h3><p>Interest on home equity loans is only deductible if used to "buy, build, or substantially improve" the property securing the loan. Using HELOC funds for a vacation, car purchase, or debt consolidation makes the interest non-deductible under post-2018 rules.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate your mortgage interest for tax planning →</span><button class="af-cta-btn" onclick="closeArticle(6);setAndCalc(300000,7,360);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Mortgage EMI</button></div>
   </article>
@@ -1086,14 +863,7 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
       <h3>3. Not Checking Prepayment Penalty</h3><p>Some lenders charge 1–5% of outstanding balance for early payoff. This eliminates the entire benefit of prepaying. It must be disclosed — read the clause before signing.</p>
       <h3>4. Choosing Longest Tenure for Lowest Payment</h3><p>$15,000 at 14% for 3 years: total interest = $3,468. Same loan for 5 years: total interest = $5,940. The more "affordable" option costs $2,472 more. Always calculate total cost, not just monthly payment.</p>
       <h3>5. Accepting Bundled Payment Protection Insurance</h3><p>Adds $30–$100/month and is presented as mandatory but is almost always optional. Decline it. Get separate term life coverage if you genuinely need protection.</p>
-      <h3>6–10: Additional Pitfalls</h3>
-      <ul>
-        <li><strong>Not reading the late payment clause</strong> — fees and grace period vary widely</li>
-        <li><strong>Borrowing more than needed</strong> — every extra dollar costs interest</li>
-        <li><strong>Not getting multiple quotes</strong> — rates vary 3–8% across lenders for same profile</li>
-        <li><strong>Missing the auto-payment discount</strong> — many lenders offer 0.25–0.5% rate reduction</li>
-        <li><strong>Applying to multiple lenders simultaneously</strong> — each is a hard inquiry dropping your score</li>
-      </ul>
+      <h3>6–10: Additional Pitfalls</h3><ul><li><strong>Not reading the late payment clause</strong> — fees and grace period vary widely</li><li><strong>Borrowing more than needed</strong> — every extra dollar costs interest</li><li><strong>Not getting multiple quotes</strong> — rates vary 3–8% across lenders for same profile</li><li><strong>Missing the auto-payment discount</strong> — many lenders offer 0.25–0.5% rate reduction</li><li><strong>Applying to multiple lenders simultaneously</strong> — each is a hard inquiry dropping your score</li></ul>
       <div class="af-highlight"><p>✅ <strong>Golden rule:</strong> Calculate total cost (not just EMI). Compare APR across at least 3 lenders. Read the prepayment clause. Never borrow more than you can comfortably repay within 36 months.</p></div>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate your personal loan total cost before applying →</span><button class="af-cta-btn" onclick="closeArticle(7);setAndCalc(15000,14,36);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Personal Loan</button></div>
@@ -1113,13 +883,7 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
       <p><strong>Day 90:</strong> Account classified as "seriously delinquent." Any new credit applications will be denied. Some lenders begin charge-off procedures.</p>
       <p><strong>Days 120–180:</strong> Account sent to a collections agency. For secured loans (mortgage, auto), legal proceedings begin for foreclosure or repossession.</p>
       <div class="af-highlight"><p>🚨 <strong>The 30-day window is everything.</strong> If you know you cannot make a payment, call your lender <em>before</em> the due date and request a hardship deferral or forbearance. Lenders overwhelmingly prefer this to reporting a missed payment — most will grant a 30-day extension with a single phone call.</p></div>
-      <h3>Recovery Roadmap</h3>
-      <ul>
-        <li>Pay immediately and obtain written confirmation of payment receipt</li>
-        <li>Request a "goodwill deletion" letter — lenders can remove a one-time late payment for customers with otherwise clean history</li>
-        <li>Set up autopay with a calendar reminder buffer of 3 days</li>
-        <li>Rebuild score with 6–12 months of consecutive on-time payments</li>
-      </ul>
+      <h3>Recovery Roadmap</h3><ul><li>Pay immediately and obtain written confirmation of payment receipt</li><li>Request a "goodwill deletion" letter — lenders can remove a one-time late payment for customers with otherwise clean history</li><li>Set up autopay with a calendar reminder buffer of 3 days</li><li>Rebuild score with 6–12 months of consecutive on-time payments</li></ul>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate an EMI you can comfortably afford →</span><button class="af-cta-btn" onclick="closeArticle(8);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Find Affordable EMI</button></div>
   </article>
@@ -1130,13 +894,10 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-t">Mortgage</span><h2 class="af-title">15-Year vs 30-Year Mortgage: The True Cost Difference in 2026</h2><p class="af-meta">DoraTools · March 2026 · 7 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>$300,000 mortgage. 30-year at 7% = $1,995/month, $418,000 total interest. 15-year at 6.5% = $2,613/month, $170,000 total interest. The 30-year costs $248,000 more. Yet millions of people choose it — and sometimes that's the right call.</p>
-      <h3>The Mathematical Case for 15-Year</h3>
-      <p>Pay $618/month more. Save $248,000 in interest. Build equity twice as fast. Own the home outright in half the time. If you can comfortably afford the higher payment, the 15-year is almost always the mathematically superior choice.</p>
-      <h3>The Behavioral Case for 30-Year</h3>
-      <p>The $618 monthly difference, invested in a broad market index fund averaging 10% annually over 15 years, grows to approximately $257,000 — slightly more than the $248,000 interest differential. The 30-year with disciplined investing <em>mathematically breaks even</em>.</p>
+      <h3>The Mathematical Case for 15-Year</h3><p>Pay $618/month more. Save $248,000 in interest. Build equity twice as fast. Own the home outright in half the time. If you can comfortably afford the higher payment, the 15-year is almost always the mathematically superior choice.</p>
+      <h3>The Behavioral Case for 30-Year</h3><p>The $618 monthly difference, invested in a broad market index fund averaging 10% annually over 15 years, grows to approximately $257,000 — slightly more than the $248,000 interest differential. The 30-year with disciplined investing <em>mathematically breaks even</em>.</p>
       <div class="af-highlight"><p>📊 <strong>Honest assessment:</strong> If you will genuinely invest the monthly savings, the 30-year is competitive. If the extra $618 would be spent rather than invested — and for most people, it would — the 15-year wins decisively. Be honest about which describes you before choosing.</p></div>
-      <h3>The Flexibility Argument</h3>
-      <p>A 30-year mortgage with voluntary overpayments gives the best of both: low required payment in difficult months, aggressive payoff when cash flow allows. You can simulate a 15-year schedule by paying extra — but you cannot escape a 15-year commitment in a tight month.</p>
+      <h3>The Flexibility Argument</h3><p>A 30-year mortgage with voluntary overpayments gives the best of both: low required payment in difficult months, aggressive payoff when cash flow allows. You can simulate a 15-year schedule by paying extra — but you cannot escape a 15-year commitment in a tight month.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Compare both mortgage options with your numbers →</span><button class="af-cta-btn" onclick="closeArticle(9);setAndCalc(300000,7,360);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Run Comparison</button></div>
   </article>
@@ -1147,13 +908,10 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-g">Save Money</span><h2 class="af-title">Debt Snowball vs Debt Avalanche: Which Pays Off Your Loans Faster?</h2><p class="af-meta">DoraTools · February 2026 · 5 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>You have 3 loans: $2,000 at 22%, $8,000 at 14%, $15,000 at 7%. You have $500/month extra to throw at debt. Two strategies: one mathematical winner, one psychological winner.</p>
-      <h3>Debt Avalanche — Mathematically Optimal</h3>
-      <p>Pay minimums on all loans. Throw every extra dollar at the highest-interest loan first. Once eliminated, roll that freed-up payment into the next. In this example, the avalanche saves <strong>$3,240 more</strong> than the snowball over the full repayment period.</p>
-      <h3>Debt Snowball — Psychologically Powerful</h3>
-      <p>Pay minimums on all loans. Throw every extra dollar at the <em>smallest balance first</em> — regardless of interest rate. Get a quick win, build momentum, stay motivated. Research shows people who use snowball are more likely to complete their debt payoff journey.</p>
+      <h3>Debt Avalanche — Mathematically Optimal</h3><p>Pay minimums on all loans. Throw every extra dollar at the highest-interest loan first. Once eliminated, roll that freed-up payment into the next. In this example, the avalanche saves <strong>$3,240 more</strong> than the snowball over the full repayment period.</p>
+      <h3>Debt Snowball — Psychologically Powerful</h3><p>Pay minimums on all loans. Throw every extra dollar at the <em>smallest balance first</em> — regardless of interest rate. Get a quick win, build momentum, stay motivated. Research shows people who use snowball are more likely to complete their debt payoff journey.</p>
       <div class="af-highlight"><p>⚖️ <strong>The honest verdict:</strong> Avalanche saves the most money. Snowball saves the most people. A completed snowball beats an abandoned avalanche every single time. Choose based on your honest assessment of your own psychology — not just the math.</p></div>
-      <h3>The Hybrid Approach</h3>
-      <p>Start snowball: eliminate one or two small debts quickly to build momentum. Then switch to avalanche for the remaining high-interest balances. This hybrid is most effective for anyone with both small nuisance debts and large high-rate balances.</p>
+      <h3>The Hybrid Approach</h3><p>Start snowball: eliminate one or two small debts quickly to build momentum. Then switch to avalanche for the remaining high-interest balances. This hybrid is most effective for anyone with both small nuisance debts and large high-rate balances.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate each loan's total cost to build your plan →</span><button class="af-cta-btn" onclick="closeArticle(10);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Loan Cost</button></div>
   </article>
@@ -1164,18 +922,10 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-a">Car Loan</span><h2 class="af-title">New Car vs Used Car Loan 2026 — Which Is Cheaper Over 5 Years?</h2><p class="af-meta">DoraTools · January 2026 · 6 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>New car: $38,000 at 6.5% for 5 years. Used car (3 years old): $22,000 at 10% for 4 years. The used car's monthly payment is lower — but which is actually cheaper over 5 years of total ownership?</p>
-      <h3>Total 5-Year Cost: New Car</h3>
-      <p>Loan total payments: $44,500. Insurance (5 yr): $8,500. Maintenance: $3,000. Depreciation loss: $15,200 (40% of value). <strong>5-year total: $56,000. Remaining market value: $22,800. Net cost: $33,200.</strong></p>
-      <h3>Total 5-Year Cost: Used Car</h3>
-      <p>Loan total payments: $25,600. Insurance (5 yr): $5,200. Maintenance: $5,500 (higher for older vehicle). Depreciation: $7,700 (35% of value). <strong>5-year total: $44,000. Remaining value: $14,300. Net cost: $29,700.</strong></p>
+      <h3>Total 5-Year Cost: New Car</h3><p>Loan total payments: $44,500. Insurance (5 yr): $8,500. Maintenance: $3,000. Depreciation loss: $15,200 (40% of value). <strong>5-year total: $56,000. Remaining market value: $22,800. Net cost: $33,200.</strong></p>
+      <h3>Total 5-Year Cost: Used Car</h3><p>Loan total payments: $25,600. Insurance (5 yr): $5,200. Maintenance: $5,500 (higher for older vehicle). Depreciation: $7,700 (35% of value). <strong>5-year total: $44,000. Remaining value: $14,300. Net cost: $29,700.</strong></p>
       <div class="af-highlight"><p>🚗 <strong>Result:</strong> Used car saves $3,500 over 5 years despite the higher interest rate. The higher rate on used car loans is dwarfed by the lower purchase price and dramatically slower depreciation curve.</p></div>
-      <h3>When New Car Wins</h3>
-      <ul>
-        <li>Manufacturer 0% or deeply subsidized financing offer</li>
-        <li>You keep the vehicle 8–12 years (depreciation per year amortizes down significantly)</li>
-        <li>Reliability is non-negotiable for professional reasons</li>
-        <li>Used car market in your area lacks trustworthy inspection options</li>
-      </ul>
+      <h3>When New Car Wins</h3><ul><li>Manufacturer 0% or deeply subsidized financing offer</li><li>You keep the vehicle 8–12 years (depreciation per year amortizes down significantly)</li><li>Reliability is non-negotiable for professional reasons</li><li>Used car market in your area lacks trustworthy inspection options</li></ul>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Compare new vs used car loan payments side by side →</span><button class="af-cta-btn" onclick="closeArticle(11);setAndCalc(38000,6.5,60);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Car Loan</button></div>
   </article>
@@ -1186,12 +936,9 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-r">Credit Score</span><h2 class="af-title">How to Raise Your Credit Score 100 Points in 6 Months</h2><p class="af-meta">DoraTools · March 2026 · 5 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>A 100-point credit score improvement can reduce your mortgage rate by 0.5–1.5%, saving $40,000–$120,000 on a 30-year mortgage. Here is the exact 6-month execution plan.</p>
-      <h3>Month 1–2: Stop the Bleeding</h3>
-      <ul><li>Set up autopay for every single account — late payments are the number-one score killer</li><li>Stop applying for any new credit — each hard inquiry costs 5–10 points</li><li>Pull your free credit report and check for errors at annualcreditreport.com</li></ul>
-      <h3>Month 3–4: Attack Utilization</h3>
-      <p>Credit utilization (balance ÷ credit limit) drives 30% of your score. Getting each card below 30% utilization has an immediate, measurable impact. Getting below 10% is optimal and can add 20–40 points alone.</p>
-      <h3>Month 5–6: Dispute and Optimize</h3>
-      <ul><li>Dispute any incorrect negative items in writing — bureaus must investigate within 30 days</li><li>Request credit limit increases on existing cards (improves utilization ratio without spending more)</li><li>Become an authorized user on a family member's old, high-limit, clean-history account</li></ul>
+      <h3>Month 1–2: Stop the Bleeding</h3><ul><li>Set up autopay for every single account — late payments are the number-one score killer</li><li>Stop applying for any new credit — each hard inquiry costs 5–10 points</li><li>Pull your free credit report and check for errors at annualcreditreport.com</li></ul>
+      <h3>Month 3–4: Attack Utilization</h3><p>Credit utilization (balance ÷ credit limit) drives 30% of your score. Getting each card below 30% utilization has an immediate, measurable impact. Getting below 10% is optimal and can add 20–40 points alone.</p>
+      <h3>Month 5–6: Dispute and Optimize</h3><ul><li>Dispute any incorrect negative items in writing — bureaus must investigate within 30 days</li><li>Request credit limit increases on existing cards (improves utilization ratio without spending more)</li><li>Become an authorized user on a family member's old, high-limit, clean-history account</li></ul>
       <div class="af-highlight"><p>📈 Following this plan consistently moves most scores 60–100 points in 6 months. The biggest single-action gains: paying down credit card balances and clearing incorrect negative items from your report.</p></div>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">See what loan rate your improved score unlocks →</span><button class="af-cta-btn" onclick="closeArticle(12);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Compare Rate Scenarios</button></div>
@@ -1203,14 +950,11 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-r">Personal Loan</span><h2 class="af-title">Personal Loan vs Credit Card: Which Is Cheaper for a $5,000 Expense?</h2><p class="af-meta">DoraTools · February 2026 · 4 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Your laptop died. $2,000 to replace it. Option A: personal loan at 14%. Option B: credit card 0% promotional offer for 18 months. Which actually costs less?</p>
-      <h3>The 0% Credit Card Offer: Read the Fine Print</h3>
-      <p>If any balance remains when the promo period ends, deferred interest at 26–30% APR is charged retroactively on the <em>original balance</em> — not just the remaining balance. A $2,000 purchase becomes a $2,600+ bill on day 547.</p>
+      <h3>The 0% Credit Card Offer: Read the Fine Print</h3><p>If any balance remains when the promo period ends, deferred interest at 26–30% APR is charged retroactively on the <em>original balance</em> — not just the remaining balance. A $2,000 purchase becomes a $2,600+ bill on day 547.</p>
       <p>Only truly free if you guarantee full payoff before month 18 and the card has no deferred interest clause. Read every word of the promotional terms before accepting.</p>
-      <h3>Personal Loan at 14%</h3>
-      <p>$2,000 at 14% for 18 months = EMI $124/month. Total interest: $232. No surprises, no retroactive charges, predictable fixed payments throughout.</p>
+      <h3>Personal Loan at 14%</h3><p>$2,000 at 14% for 18 months = EMI $124/month. Total interest: $232. No surprises, no retroactive charges, predictable fixed payments throughout.</p>
       <div class="af-highlight"><p>✅ <strong>Verdict:</strong> 0% credit card wins if you can guarantee full payoff before the promo ends AND the card uses no deferred interest. Personal loan wins for anyone who might carry any balance past the promo period. When in doubt, take the predictable option.</p></div>
-      <h3>Debt Consolidation Case</h3>
-      <p>Consolidating multiple credit cards at 22–29% APR into a single personal loan at 12–15% almost always makes strong financial sense — even after origination fees. The interest savings over 3 years are typically $2,000–$8,000 on a $15,000–$30,000 balance.</p>
+      <h3>Debt Consolidation Case</h3><p>Consolidating multiple credit cards at 22–29% APR into a single personal loan at 12–15% almost always makes strong financial sense — even after origination fees. The interest savings over 3 years are typically $2,000–$8,000 on a $15,000–$30,000 balance.</p>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate your personal loan total cost →</span><button class="af-cta-btn" onclick="closeArticle(13);setAndCalc(5000,14,18);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Now</button></div>
   </article>
@@ -1221,18 +965,10 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-a">Interest Types</span><h2 class="af-title">Fixed vs Variable Interest Rate — Which Should You Choose in 2026?</h2><p class="af-meta">DoraTools · January 2026 · 6 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Variable rates start lower. Fixed rates stay predictable. In 2026's rate environment — where rates have peaked and are beginning to fall — which one actually costs less over the full loan term?</p>
-      <h3>Fixed Rate: The Certainty Premium</h3>
-      <p>You pay a small premium — typically 0.5–1% higher than variable at origination — for the guarantee that your payment will never change. Regardless of where benchmark rates go over the next 20–30 years, your payment is locked.</p>
-      <h3>Variable Rate: The Risk-Reward Trade</h3>
-      <p>Variable rates are pegged to benchmarks (Prime Rate, SOFR, or similar) and reset periodically. If rates fall, you benefit automatically. If rates rise, your payment increases. Most variable loans have a lifetime cap of +5–6% above the starting rate.</p>
+      <h3>Fixed Rate: The Certainty Premium</h3><p>You pay a small premium — typically 0.5–1% higher than variable at origination — for the guarantee that your payment will never change. Regardless of where benchmark rates go over the next 20–30 years, your payment is locked.</p>
+      <h3>Variable Rate: The Risk-Reward Trade</h3><p>Variable rates are pegged to benchmarks (Prime Rate, SOFR, or similar) and reset periodically. If rates fall, you benefit automatically. If rates rise, your payment increases. Most variable loans have a lifetime cap of +5–6% above the starting rate.</p>
       <div class="af-highlight"><p>🎯 <strong>2026 Guidance:</strong> With rates having peaked and beginning to decline, variable rates on short-term loans (under 5 years) offer a genuine cost advantage. For long-term mortgages (15–30 years), fixed rate provides stability that the majority of homeowners value more than the potential variable rate savings over an uncertain multi-decade horizon.</p></div>
-      <h3>Rule of Thumb by Loan Type</h3>
-      <ul>
-        <li><strong>Mortgage:</strong> Fixed — unless certain you will sell or refinance within 7 years</li>
-        <li><strong>Car loan:</strong> Always fixed — short term, no reason to accept payment uncertainty</li>
-        <li><strong>Personal loan:</strong> Fixed — you need payment certainty for budgeting</li>
-        <li><strong>Student loan:</strong> Federal fixed usually better than private variable over a 10–25 year horizon</li>
-      </ul>
+      <h3>Rule of Thumb by Loan Type</h3><ul><li><strong>Mortgage:</strong> Fixed — unless certain you will sell or refinance within 7 years</li><li><strong>Car loan:</strong> Always fixed — short term, no reason to accept payment uncertainty</li><li><strong>Personal loan:</strong> Fixed — you need payment certainty for budgeting</li><li><strong>Student loan:</strong> Federal fixed usually better than private variable over a 10–25 year horizon</li></ul>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Model fixed vs variable scenarios with your numbers →</span><button class="af-cta-btn" onclick="closeArticle(14);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Compare Scenarios</button></div>
   </article>
@@ -1243,14 +979,10 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-t">Mortgage</span><h2 class="af-title">How Much Mortgage Can You Afford? The 4 Rules Lenders Use</h2><p class="af-meta">DoraTools · March 2026 · 8 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Lenders don't just look at income. They apply four overlapping rules to determine maximum loan size. Knowing all four tells you exactly what you qualify for — and how to push the limit.</p>
-      <h3>Rule 1: The 28% Front-End Ratio</h3>
-      <p>Monthly mortgage payment (PITI: principal, interest, taxes, insurance) must not exceed 28% of gross monthly income. At $8,000/month gross income: max PITI = $2,240.</p>
-      <h3>Rule 2: The 36% Back-End DTI</h3>
-      <p>Total monthly debt (mortgage + car + student + credit card minimums) must not exceed 36% of gross income. With $500/month in existing debt: max new mortgage payment = $2,880 − $500 = $2,380.</p>
-      <h3>Rule 3: The 43% Absolute Ceiling</h3>
-      <p>Most conventional lenders cap total DTI at 43%. FHA loans allow up to 50% in qualifying scenarios. This is the maximum — not what you should target for financial comfort.</p>
-      <h3>Rule 4: The 3–4× Income Guideline</h3>
-      <p>Maximum home price ≈ 3–4× annual gross income. At $96,000/year: affordable range = $288,000–$384,000. Higher income earners with low existing debt can often push toward 4× or beyond.</p>
+      <h3>Rule 1: The 28% Front-End Ratio</h3><p>Monthly mortgage payment (PITI: principal, interest, taxes, insurance) must not exceed 28% of gross monthly income. At $8,000/month gross income: max PITI = $2,240.</p>
+      <h3>Rule 2: The 36% Back-End DTI</h3><p>Total monthly debt (mortgage + car + student + credit card minimums) must not exceed 36% of gross income. With $500/month in existing debt: max new mortgage payment = $2,880 − $500 = $2,380.</p>
+      <h3>Rule 3: The 43% Absolute Ceiling</h3><p>Most conventional lenders cap total DTI at 43%. FHA loans allow up to 50% in qualifying scenarios. This is the maximum — not what you should target for financial comfort.</p>
+      <h3>Rule 4: The 3–4× Income Guideline</h3><p>Maximum home price ≈ 3–4× annual gross income. At $96,000/year: affordable range = $288,000–$384,000. Higher income earners with low existing debt can often push toward 4× or beyond.</p>
       <div class="af-highlight"><p>💡 <strong>Best practice:</strong> Calculate your maximum using all four rules, take the lowest result — that's your lender's ceiling. Then personally target 20–25% front-end ratio for financial resilience, leaving meaningful room for emergencies, savings, and lifestyle.</p></div>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate the EMI for your target mortgage →</span><button class="af-cta-btn" onclick="closeArticle(15);setAndCalc(350000,7,360);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Check Mortgage EMI</button></div>
@@ -1262,17 +994,9 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-p">Tax &amp; Legal</span><h2 class="af-title">Student Loan Interest Tax Deduction 2026 — Full Eligibility Guide</h2><p class="af-meta">DoraTools · February 2026 · 5 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>Up to $2,500 in student loan interest is deductible as an above-the-line deduction — meaning you don't need to itemize to claim it. This is genuinely free money that millions of borrowers miss every year.</p>
-      <h3>Income Phase-Out Range</h3>
-      <p>The deduction begins phasing out at $75,000 MAGI (single filers) and $155,000 (married filing jointly). Above $90,000 single or $185,000 joint: no deduction at all. Within the range: partial deduction calculated proportionally.</p>
-      <h3>How Much Can You Actually Save?</h3>
-      <p>Maximum deduction: $2,500. At 22% tax bracket: saves $550/year. At 24%: saves $600/year. Small but completely free — you're legally owed this money, so claim it.</p>
-      <h3>Who Qualifies</h3>
-      <ul>
-        <li>Individual who took the loan for their own higher education, or for a spouse or dependent</li>
-        <li>Loan must be from a qualified financial institution — not family members</li>
-        <li>Course must be post-secondary (after completing secondary/high school education)</li>
-        <li>Both federal and private student loans qualify if they meet the criteria</li>
-      </ul>
+      <h3>Income Phase-Out Range</h3><p>The deduction begins phasing out at $75,000 MAGI (single filers) and $155,000 (married filing jointly). Above $90,000 single or $185,000 joint: no deduction at all. Within the range: partial deduction calculated proportionally.</p>
+      <h3>How Much Can You Actually Save?</h3><p>Maximum deduction: $2,500. At 22% tax bracket: saves $550/year. At 24%: saves $600/year. Small but completely free — you're legally owed this money, so claim it.</p>
+      <h3>Who Qualifies</h3><ul><li>Individual who took the loan for their own higher education, or for a spouse or dependent</li><li>Loan must be from a qualified financial institution — not family members</li><li>Course must be post-secondary (after completing secondary/high school education)</li><li>Both federal and private student loans qualify if they meet the criteria</li></ul>
       <div class="af-highlight"><p>📚 <strong>Income-Driven Repayment Trap:</strong> On IDR plans, your monthly payment may be lower than the monthly interest accruing on your balance. This creates negative amortization — you pay faithfully every month and your balance grows. If pursuing loan forgiveness, this can be intentional strategy. Otherwise, consider paying extra to prevent balance growth.</p></div>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Calculate your student loan monthly payment →</span><button class="af-cta-btn" onclick="closeArticle(16);setAndCalc(30000,6.5,120);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Calculate Student Loan</button></div>
@@ -1284,16 +1008,11 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
     <div class="af-header"><span class="blog-tag bt-b">How To</span><h2 class="af-title">How to Use a Loan Calculator Correctly — 5 Mistakes That Give Wrong Results</h2><p class="af-meta">DoraTools · January 2026 · 4 min read</p></div>
     <div class="af-body" itemprop="articleBody">
       <p>A loan calculator produces a number in 3 seconds. Feed it wrong inputs and it produces a wrong number in 3 seconds. Here are the five most common mistakes and exactly how to fix each one.</p>
-      <h3>Mistake 1: Using Gross Income for Affordability Checks</h3>
-      <p>For evaluating whether a payment fits your budget, always use take-home pay — after taxes, retirement contributions, and insurance deductions. Gross income overstates available cash by 25–35% for most earners.</p>
-      <h3>Mistake 2: Ignoring Origination Fees in Total Cost</h3>
-      <p>The calculator shows monthly payment and total interest. It does not include origination fees. Add 1–3% of the loan amount to get the true total cost of borrowing before comparing lenders.</p>
-      <h3>Mistake 3: Running Only One Tenure Scenario</h3>
-      <p>Always model 3, 4, and 5-year scenarios (or 15 vs 30 years for mortgages). The total interest difference between a 3-year and 5-year $20,000 personal loan at 14% is $2,100. That is real money for a 90-second calculation.</p>
-      <h3>Mistake 4: Skipping the Prepayment Scenario</h3>
-      <p>The calculator is most powerful when combined with the prepayment tool. Always run: "what if I make one extra $X payment in year 2?" before finalizing tenure. The interest savings frequently justify the upfront planning.</p>
-      <h3>Mistake 5: Comparing Nominal Rate Instead of APR</h3>
-      <p>When comparing two loan offers, compare APR — not the stated interest rate. APR includes all fees and gives a true apples-to-apples comparison. A 10% loan with 3% origination has a materially higher effective cost than an 11% loan with zero origination on short-tenure loans.</p>
+      <h3>Mistake 1: Using Gross Income for Affordability Checks</h3><p>For evaluating whether a payment fits your budget, always use take-home pay — after taxes, retirement contributions, and insurance deductions. Gross income overstates available cash by 25–35% for most earners.</p>
+      <h3>Mistake 2: Ignoring Origination Fees in Total Cost</h3><p>The calculator shows monthly payment and total interest. It does not include origination fees. Add 1–3% of the loan amount to get the true total cost of borrowing before comparing lenders.</p>
+      <h3>Mistake 3: Running Only One Tenure Scenario</h3><p>Always model 3, 4, and 5-year scenarios (or 15 vs 30 years for mortgages). The total interest difference between a 3-year and 5-year $20,000 personal loan at 14% is $2,100. That is real money for a 90-second calculation.</p>
+      <h3>Mistake 4: Skipping the Prepayment Scenario</h3><p>The calculator is most powerful when combined with the prepayment tool. Always run: "what if I make one extra $X payment in year 2?" before finalizing tenure. The interest savings frequently justify the upfront planning.</p>
+      <h3>Mistake 5: Comparing Nominal Rate Instead of APR</h3><p>When comparing two loan offers, compare APR — not the stated interest rate. APR includes all fees and gives a true apples-to-apples comparison. A 10% loan with 3% origination has a materially higher effective cost than an 11% loan with zero origination on short-tenure loans.</p>
       <div class="af-highlight"><p>✅ <strong>Best practice:</strong> Run three scenarios — shortest tenure you can truly afford, a middle tenure with one planned prepayment, and the longest tenure as a safety net. Build your decision around the middle scenario.</p></div>
     </div>
     <div class="af-cta-box"><span class="af-cta-text">Use the calculator correctly right now →</span><button class="af-cta-btn" onclick="closeArticle(17);document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Open Calculator</button></div>
@@ -1301,80 +1020,36 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
 
 </section>
 
-<!-- FAQ — Schema-matched, Featured Snippet optimized -->
+<!-- FAQ -->
 <section class="spoke" id="faq" aria-labelledby="faq-h2">
-  <div class="sh">
-    <h2 id="faq-h2">Frequently Asked Questions — EMI & Loan Calculator</h2>
-  </div>
+  <div class="sh"><h2 id="faq-h2">Frequently Asked Questions — EMI & Loan Calculator</h2></div>
   <div class="faq-grid">
     <div>
-      <div class="faq-item">
-        <button class="faq-q">What is an EMI or monthly loan installment? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">An EMI (Equated Monthly Installment) is a fixed monthly payment made to repay a loan. Each payment covers both interest and principal. Early payments are weighted heavily toward interest; later payments shift toward principal — this is called amortization.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What is the formula for calculating loan EMI? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">EMI = [P × R × (1+R)^N] ÷ [(1+R)^N − 1]. P = Principal, R = Monthly rate (annual ÷ 12 ÷ 100), N = Number of monthly payments. Example: $10,000 at 6% for 3 years → EMI = $304.22/month, total interest = $1,152.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How does loan tenure affect total interest paid? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">Longer tenure lowers your monthly payment but significantly increases total interest. A $20,000 loan at 8%: 3-year total interest = $2,562. 7-year total interest = $6,139 — $3,577 more for the same loan. Always calculate total cost, not just monthly payment.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What is a good debt-to-income ratio for a loan? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">Most lenders consider under 36% excellent, 36–43% acceptable, and above 43% high-risk. For personal financial health, keep all monthly debt payments below 30% of take-home pay — leaving meaningful room for savings and unexpected expenses.</div>
-      </div>
+      <div class="faq-item"><button class="faq-q">What is an EMI or monthly loan installment? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">An EMI (Equated Monthly Installment) is a fixed monthly payment made to repay a loan. Each payment covers both interest and principal. Early payments are weighted heavily toward interest; later payments shift toward principal — this is called amortization.</div></div>
+      <div class="faq-item"><button class="faq-q">What is the formula for calculating loan EMI? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">EMI = [P × R × (1+R)^N] ÷ [(1+R)^N − 1]. P = Principal, R = Monthly rate (annual ÷ 12 ÷ 100), N = Number of monthly payments. Example: $10,000 at 6% for 3 years → EMI = $304.22/month, total interest = $1,152.</div></div>
+      <div class="faq-item"><button class="faq-q">How does loan tenure affect total interest paid? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">Longer tenure lowers your monthly payment but significantly increases total interest. A $20,000 loan at 8%: 3-year total interest = $2,562. 7-year total interest = $6,139 — $3,577 more for the same loan. Always calculate total cost, not just monthly payment.</div></div>
+      <div class="faq-item"><button class="faq-q">What is a good debt-to-income ratio for a loan? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">Most lenders consider under 36% excellent, 36–43% acceptable, and above 43% high-risk. For personal financial health, keep all monthly debt payments below 30% of take-home pay — leaving meaningful room for savings and unexpected expenses.</div></div>
     </div>
     <div>
-      <div class="faq-item">
-        <button class="faq-q">Should I pay off my loan early? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">Generally yes, if there is no prepayment penalty. Prepayments save the most interest when made in the first third of the loan tenure. Check your loan agreement for prepayment clauses first. Use our prepayment calculator above to see exact savings in seconds.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What is the difference between flat rate and reducing balance? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">Flat rate charges interest on the original principal for the entire tenure. Reducing balance charges interest only on the outstanding declining balance each month. A 10% flat rate loan costs approximately the same as an 18% reducing balance loan — nearly double the real cost. Most reputable lenders use reducing balance.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">What happens if I miss a loan payment? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">Before Day 30: late fee only, no credit impact — pay immediately. Day 30: credit bureaus are notified, score drops 50–100 points. Day 90: serious delinquency classification. Day 180+: collections or legal proceedings begin. Call your lender before missing a payment — most will grant a one-time deferral by phone.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How do I calculate my monthly mortgage payment? <span class="faq-arr" aria-hidden="true">+</span></button>
-        <div class="faq-a">Use the calculator above: enter loan amount, annual interest rate, and tenure. Click Calculate. For a $300,000 mortgage at 7% for 30 years, the monthly payment is $1,995.91 with $418,527 in total interest over the full term.</div>
-      </div>
+      <div class="faq-item"><button class="faq-q">Should I pay off my loan early? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">Generally yes, if there is no prepayment penalty. Prepayments save the most interest when made in the first third of the loan tenure. Check your loan agreement for prepayment clauses first. Use our prepayment calculator above to see exact savings in seconds.</div></div>
+      <div class="faq-item"><button class="faq-q">What is the difference between flat rate and reducing balance? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">Flat rate charges interest on the original principal for the entire tenure. Reducing balance charges interest only on the outstanding declining balance each month. A 10% flat rate loan costs approximately the same as an 18% reducing balance loan — nearly double the real cost. Most reputable lenders use reducing balance.</div></div>
+      <div class="faq-item"><button class="faq-q">What happens if I miss a loan payment? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">Before Day 30: late fee only, no credit impact — pay immediately. Day 30: credit bureaus are notified, score drops 50–100 points. Day 90: serious delinquency classification. Day 180+: collections or legal proceedings begin. Call your lender before missing a payment — most will grant a one-time deferral by phone.</div></div>
+      <div class="faq-item"><button class="faq-q">How do I calculate my monthly mortgage payment? <span class="faq-arr" aria-hidden="true">+</span></button><div class="faq-a">Use the calculator above: enter loan amount, annual interest rate, and tenure. Click Calculate. For a $300,000 mortgage at 7% for 30 years, the monthly payment is $1,995.91 with $418,527 in total interest over the full term.</div></div>
     </div>
   </div>
 </section>
 
 </main>
-<!-- FOOTER -->
+
 <footer role="contentinfo">
   <div class="footer-top">
     <div>
       <div class="footer-brand">Dora<span>Tools</span></div>
       <p class="footer-desc">Free online calculators and financial tools. No signup. No paywalls. Built to help you make smarter money decisions — wherever you are in the world.</p>
     </div>
-    <div class="footer-col">
-      <h4>Calculators</h4>
-      <a href="#">EMI Calculator</a>
-      <a href="#">SIP Calculator</a>
-      <a href="#">Compound Interest</a>
-      <a href="#">Loan Eligibility</a>
-    </div>
-    <div class="footer-col">
-      <h4>Learn</h4>
-      <a href="#blog">Mortgage Guide</a>
-      <a href="#blog">Credit Score Tips</a>
-      <a href="#blog">Tax Benefits</a>
-      <a href="#blog">Prepayment Guide</a>
-    </div>
-    <div class="footer-col">
-      <h4>DoraTools</h4>
-      <a href="/about.html">About</a>
-      <a href="#">All Tools</a>
-      <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    <div class="footer-col"><h4>Calculators</h4><a href="#">EMI Calculator</a><a href="#">SIP Calculator</a><a href="#">Compound Interest</a><a href="#">Loan Eligibility</a></div>
+    <div class="footer-col"><h4>Learn</h4><a href="#blog">Mortgage Guide</a><a href="#blog">Credit Score Tips</a><a href="#blog">Tax Benefits</a><a href="#blog">Prepayment Guide</a></div>
+    <div class="footer-col"><h4>DoraTools</h4><a href="/about.html">About</a><a href="#">All Tools</a><a href="/privacy-policy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 DoraTools · Free Online Financial Calculators</span>
@@ -1382,12 +1057,17 @@ button:focus-visible{outline:2px solid var(--blue2);outline-offset:2px;}
   </div>
 </footer>
 
+<!-- FIX 2: All JS deferred to end of body, auto-calculate uses requestIdleCallback -->
 <script>
+'use strict';
+
 // ── State ──
 let cur={code:'USD',sym:'$'};
 let intType='reducing';
 let showAllRows=false;
 let lastCalc=null;
+// FIX 5: Store raw amort data separately from DOM rows
+let lastAmortData=null;
 
 // ── Currency ──
 document.querySelectorAll('.cp').forEach(btn=>{
@@ -1444,7 +1124,9 @@ function updateTenureDisp(){const v=parseInt(tenureInput.value)||1;const u=tenur
 // ── Core math ──
 function calcR(P,r,n){if(r===0)return{emi:P/n,total:P,interest:0};const R=r/12/100;const e=P*R*Math.pow(1+R,n)/(Math.pow(1+R,n)-1);return{emi:e,total:e*n,interest:e*n-P};}
 function calcF(P,r,n){const interest=P*r/100*(n/12);const emi=(P+interest)/n;return{emi,total:P+interest,interest};}
-function buildAmort(P,r,n,type){
+
+// FIX 5: buildAmort only computes data, does NOT touch the DOM
+function buildAmortData(P,r,n,type){
   const R=r/12/100;
   const emi=type==='flat'?(P+(P*r/100*(n/12)))/n:(r===0?P/n:P*R*Math.pow(1+R,n)/(Math.pow(1+R,n)-1));
   const rows=[];let bal=P;
@@ -1460,6 +1142,7 @@ function buildAmort(P,r,n,type){
 // ── Calculate ──
 document.getElementById('calcBtn').addEventListener('click',calculate);
 [amtInput,rateInput,tenureInput].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')calculate();}));
+
 function calculate(){
   const P=parseFloat(amtInput.value)||0;
   const rate=parseFloat(rateInput.value)||0;
@@ -1467,12 +1150,13 @@ function calculate(){
   if(tenureUnit.value==='years')n*=12;
   if(P<=0){alert('Please enter a valid loan amount.');return;}
   const res=intType==='flat'?calcF(P,rate,n):calcR(P,rate,n);
-  const amort=buildAmort(P,rate,n,intType);
-  lastCalc={P,rate,n,intType,...res,amort};
+  // FIX 5: compute data only, don't build DOM table yet
+  lastAmortData=buildAmortData(P,rate,n,intType);
+  lastCalc={P,rate,n,intType,...res};
   renderResults(lastCalc);
 }
 
-// ── Render ──
+// ── Render results (no amort table DOM here) ──
 function renderResults(d){
   const s=cur.sym;
   document.getElementById('emiSym').textContent=s;
@@ -1497,14 +1181,19 @@ function renderResults(d){
   else if(ratio>50)tip=`Total interest is ${s+' '+fmt(d.interest)} (${ratio.toFixed(0)}% of principal). A single prepayment of ${s+' '+fmt(Math.round(d.P*0.05))} in year 1 could save approximately ${s+' '+fmt(Math.round(d.interest*0.12))}.`;
   else tip=`Good loan terms — interest ratio is ${ratio.toFixed(0)}% of principal. Use the prepayment calculator to see how a lump-sum payment could close this loan early.`;
   document.getElementById('insightText').textContent=tip;
-  buildAmortTable(d.amort);
+  // Reset amort table — build only when user opens it
+  document.getElementById('amortTbody').innerHTML='';
+  document.getElementById('showMoreBtn').style.display='none';
+  document.getElementById('amortBody').style.display='none';
+  document.getElementById('amortToggle').textContent='Show Table';
 }
 
-// ── Amort table ──
+// FIX 5: Build amort table DOM only on demand
 function buildAmortTable(rows){
   const s=cur.sym;
   const tbody=document.getElementById('amortTbody');
   tbody.innerHTML='';
+  const frag=document.createDocumentFragment();
   const years={};
   rows.forEach(r=>{const yr=Math.ceil(r.month/12);if(!years[yr])years[yr]={principal:0,interest:0,emi:0,balance:0};years[yr].principal+=r.principal;years[yr].interest+=r.interest;years[yr].emi+=r.emi;years[yr].balance=r.balance;});
   let count=0;
@@ -1512,21 +1201,35 @@ function buildAmortTable(rows){
     const y=years[yr];
     const ytr=document.createElement('tr');ytr.className='yr-row';
     ytr.innerHTML=`<td><strong>Year ${yr}</strong></td><td>${s} ${fmt(y.emi)}</td><td>${s} ${fmt(y.principal)}</td><td>${s} ${fmt(y.interest)}</td><td>${s} ${fmt(y.balance)}</td>`;
-    tbody.appendChild(ytr);count++;
-    rows.filter(r=>Math.ceil(r.month/12)==yr).forEach(r=>{
-      const tr=document.createElement('tr');
-      if(count>26&&!showAllRows)tr.style.display='none';
-      tr.innerHTML=`<td style="padding-left:22px;font-size:.75rem;color:var(--text3)">Month ${r.month}</td><td>${s} ${fmt(r.emi)}</td><td>${s} ${fmt(r.principal)}</td><td>${s} ${fmt(r.interest)}</td><td>${s} ${fmt(r.balance)}</td>`;
-      tbody.appendChild(tr);count++;
-    });
+    frag.appendChild(ytr);count++;
+    if(showAllRows){
+      rows.filter(r=>Math.ceil(r.month/12)==yr).forEach(r=>{
+        const tr=document.createElement('tr');
+        tr.innerHTML=`<td style="padding-left:22px;font-size:.75rem;color:var(--text3)">Month ${r.month}</td><td>${s} ${fmt(r.emi)}</td><td>${s} ${fmt(r.principal)}</td><td>${s} ${fmt(r.interest)}</td><td>${s} ${fmt(r.balance)}</td>`;
+        frag.appendChild(tr);count++;
+      });
+    }
   });
+  tbody.appendChild(frag);
   const smb=document.getElementById('showMoreBtn');
-  smb.style.display=(rows.length>26&&!showAllRows)?'block':'none';
+  smb.style.display=(rows.length>12&&!showAllRows)?'block':'none';
 }
-document.getElementById('showMoreBtn').addEventListener('click',()=>{showAllRows=true;if(lastCalc)buildAmortTable(lastCalc.amort);});
+
+document.getElementById('showMoreBtn').addEventListener('click',()=>{
+  showAllRows=true;
+  if(lastAmortData)buildAmortTable(lastAmortData);
+});
+
+// FIX 5: Only build table when the section is opened
 document.getElementById('amortToggle').addEventListener('click',()=>{
   const b=document.getElementById('amortBody'),t=document.getElementById('amortToggle');
-  const h=b.style.display==='block';b.style.display=h?'none':'block';t.textContent=h?'Show Table':'Hide Table';
+  const h=b.style.display==='block';
+  b.style.display=h?'none':'block';
+  t.textContent=h?'Show Table':'Hide Table';
+  // Build table DOM only on first open
+  if(!h && lastAmortData && document.getElementById('amortTbody').children.length===0){
+    buildAmortTable(lastAmortData);
+  }
 });
 
 // ── Prepayment ──
@@ -1610,8 +1313,14 @@ document.querySelectorAll('.faq-q').forEach(btn=>{
 function fmt(n){return Math.round(n).toLocaleString('en-US');}
 function pct(f){return(f*100).toFixed(1)+'%';}
 
-// ── Init ──
-updateAmtDisp();updateTenureDisp();calculate();
+// ── FIX 2: Init — don't auto-calc; defer to idle so first paint is fast ──
+updateAmtDisp();
+updateTenureDisp();
+if('requestIdleCallback' in window){
+  requestIdleCallback(()=>calculate(),{timeout:2000});
+}else{
+  setTimeout(calculate,300);
+}
 </script>
 </body>
 </html>
