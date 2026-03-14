@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Doratools – Eid Wish Generator</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Amiri:wght@400;700&family=Nunito:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #fccb00;
+  --white: #ffffff;
+  --bg: #020617;
+  --card: rgba(15,23,42,0.97);
+  --radius: 20px;
+}
+
+/* HIDE ALL PANELS INITIALLY - PREVENT FLASH */
+#gen-ui, #reveal-screen, #wish-ui { display: none; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* ── THEMES ── */
+/* Applied to body via class */
+.t-emerald   { --th-a: #064e3b; --th-b: #022c22; --th-accent: #34d399; }
+.t-royal     { --th-a: #1e3a8a; --th-b: #172554; --th-accent: #60a5fa; }
+.t-sunset    { --th-a: #581c87; --th-b: #2e1065; --th-accent: #c084fc; }
+.t-golden    { --th-a: #78350f; --th-b: #451a03; --th-accent: #fbbf24; }
+.t-desert    { --th-a: #7c2d12; --th-b: #431407; --th-accent: #fb923c; }
+.t-ocean     { --th-a: #0c4a6e; --th-b: #082f49; --th-accent: #38bdf8; }
+.t-rose      { --th-a: #881337; --th-b: #4c0519; --th-accent: #fb7185; }
+.t-night     { --th-a: #1e1b4b; --th-b: #0f0c29; --th-accent: #a5b4fc; }
+
+/* Theme applies background to body when on wish page */
+body.t-emerald { background: radial-gradient(ellipse at 30% 20%, #064e3b 0%, #022c22 100%); }
+body.t-royal   { background: radial-gradient(ellipse at 30% 20%, #1e3a8a 0%, #172554 100%); }
+body.t-sunset  { background: radial-gradient(ellipse at 30% 20%, #581c87 0%, #2e1065 100%); }
+body.t-golden  { background: radial-gradient(ellipse at 30% 20%, #78350f 0%, #451a03 100%); }
+body.t-desert  { background: radial-gradient(ellipse at 30% 20%, #7c2d12 0%, #431407 100%); }
+body.t-ocean   { background: radial-gradient(ellipse at 30% 20%, #0c4a6e 0%, #082f49 100%); }
+body.t-rose    { background: radial-gradient(ellipse at 30% 20%, #881337 0%, #4c0519 100%); }
+body.t-night   { background: radial-gradient(ellipse at 30% 20%, #1e1b4b 0%, #0f0c29 100%); }
+
+/* ── STARFIELD ── */
+#bg-stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.star {
+  position: absolute; background: #fff; border-radius: 50%;
+  animation: twinkle var(--dur, 3s) ease-in-out infinite var(--delay, 0s);
+}
+@keyframes twinkle { 0%,100% { opacity: 0.15; } 50% { opacity: 0.8; } }
+
+/* ── HEADER ── */
+.dora-header {
+  position: relative; z-index: 20;
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  background: rgba(3,7,18,0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(252,203,0,0.15);
+}
+.logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem; color: var(--gold);
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px rgba(252,203,0,0.5);
+}
+.logo span { color: #fff; }
+
+/* ══════════════════════════════
+   GENERATOR UI
+══════════════════════════════ */
+#gen-ui {
+  width: 92%; max-width: 430px;
+  position: relative; z-index: 10;
+  margin: 28px auto 40px;
+}
+
+.gen-card {
+  background: var(--card);
+  border: 1px solid rgba(252,203,0,0.25);
+  border-radius: 24px;
+  padding: 28px 22px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+.gen-card h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 6px;
+  text-shadow: 0 0 20px rgba(252,203,0,0.4);
+}
+.gen-subtitle {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #64748b;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.form-group { margin-bottom: 16px; }
+label {
+  display: block;
+  font-size: 10px;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 7px;
+}
+input, select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.25s;
+}
+input:focus, select:focus { border-color: rgba(252,203,0,0.5); }
+select option { background: #0f172a; }
+
+/* THEME PREVIEW SWATCHES */
+.theme-swatches {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.swatch {
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.swatch:hover { transform: scale(1.05); }
+.swatch.active { border-color: var(--gold); box-shadow: 0 0 12px rgba(252,203,0,0.5); }
+.sw-emerald { background: linear-gradient(135deg,#064e3b,#34d399); }
+.sw-royal   { background: linear-gradient(135deg,#1e3a8a,#60a5fa); }
+.sw-sunset  { background: linear-gradient(135deg,#581c87,#c084fc); }
+.sw-golden  { background: linear-gradient(135deg,#78350f,#fbbf24); }
+.sw-desert  { background: linear-gradient(135deg,#7c2d12,#fb923c); }
+.sw-ocean   { background: linear-gradient(135deg,#0c4a6e,#38bdf8); }
+.sw-rose    { background: linear-gradient(135deg,#881337,#fb7185); }
+.sw-night   { background: linear-gradient(135deg,#1e1b4b,#a5b4fc); }
+
+.btn-gen {
+  width: 100%; padding: 17px;
+  background: linear-gradient(135deg, #d4af37, #fccb00, #e8a020);
+  color: #1a0a00;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800; font-size: 1rem;
+  border: none; border-radius: 14px;
+  cursor: pointer; letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 25px rgba(252,203,0,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+}
+.btn-gen::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(255,255,255,0.2), transparent);
+  transform: translateX(-100%);
+  animation: sheen 3s infinite;
+}
+@keyframes sheen { 0%{transform:translateX(-100%)} 40%,100%{transform:translateX(100%)} }
+.btn-gen:hover { transform: translateY(-2px); box-shadow: 0 10px 35px rgba(252,203,0,0.5); }
+.btn-gen:active { transform: scale(0.97); }
+
+/* RESULT PANEL */
+#result-panel {
+  display: none;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.result-label {
+  font-size: 10px; color: #34d399;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 10px; text-align: center;
+}
+.link-preview {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(52,211,153,0.3);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: #64748b;
+  word-break: break-all;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.share-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.btn-share {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-share:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-wa { background: #25D366; color: white; }
+.btn-copy { background: #1e293b; color: white; }
+.btn-more { background: #334155; color: white; }
+.btn-fb { background: #1877F2; color: white; }
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #475569;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+.back-link:hover { color: var(--gold); }
+
+/* ══════════════════════════════
+   REVEAL SCREEN (WISH PAGE)
+══════════════════════════════ */
+#reveal-screen {
+  position: fixed; inset: 0; z-index: 100;
+  flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: inherit;
+}
+.lantern {
+  font-size: 6rem;
+  cursor: pointer;
+  animation: lanternFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px var(--gold));
+  transition: transform 0.1s;
+  user-select: none;
+}
+.lantern:active { transform: scale(0.9); }
+@keyframes lanternFloat {
+  0%,100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-22px) rotate(3deg); }
+}
+.reveal-title {
+  font-family: 'Amiri', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-top: 24px;
+  margin-bottom: 8px;
+  animation: fadeIn 1s ease forwards;
+}
+.reveal-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  animation: fadeIn 1s 0.3s ease both;
+  letter-spacing: 1px;
+}
+@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+
+/* ══════════════════════════════
+   WISH SEQUENCE UI
+══════════════════════════════ */
+#wish-ui {
+  width: 100%; min-height: 100vh;
+  flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  position: relative; z-index: 10;
+}
+
+.seq-step {
+  display: none;
+  max-width: 480px;
+  animation: stepIn 1.2s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+@keyframes stepIn {
+  from { opacity:0; transform: translateY(40px) scale(0.95); }
+  to   { opacity:1; transform: none; }
+}
+.seq-step.active { display: block; }
+
+.dua-arabic {
+  font-family: 'Amiri', serif;
+  font-size: 2rem;
+  color: var(--gold);
+  direction: rtl;
+  margin-bottom: 14px;
+  opacity: 0.85;
+}
+.dua-text {
+  font-family: 'Amiri', serif;
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: #f1f5f9;
+  padding: 0 10px;
+}
+.dua-ornament {
+  font-size: 1.5rem;
+  opacity: 0.4;
+  margin: 16px 0;
+  letter-spacing: 8px;
+}
+
+/* FINAL REVEAL */
+#final-reveal {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: stepIn 1.5s forwards;
+}
+.final-from {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.final-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(252,203,0,0.5);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.final-eid {
+  font-family: 'Amiri', serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  color: #fff;
+  margin: 0 0 16px;
+  opacity: 0;
+  filter: blur(12px);
+  transform: scale(0.8);
+  animation: sacredLight 2.5s 0.5s cubic-bezier(0.21,0.6,0.35,1) forwards;
+}
+@keyframes sacredLight {
+  0%   { opacity:0; filter:blur(20px); transform:scale(0.75); }
+  50%  { opacity:1; filter:blur(4px); transform:scale(1.05); text-shadow: 0 0 50px var(--gold); }
+  100% { opacity:1; filter:blur(0); transform:scale(1); text-shadow: 0 0 20px var(--gold), 0 0 50px rgba(255,255,255,0.3); }
+}
+
+.btn-create-own {
+  margin-top: 36px;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #d4af37, #fccb00);
+  color: #1a0a00;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 25px rgba(252,203,0,0.3);
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.btn-create-own:hover { transform: scale(1.04); }
+
+.watermark {
+  position: fixed; bottom: 14px; width: 100%;
+  text-align: center; font-size: 9px;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 3px; z-index: 5;
+}
+</style>
+</head>
+<body>
+
+<div id="bg-stars"></div>
+
+<!-- ═══ HEADER ═══ -->
+<div class="dora-header">
+  <div class="logo">Dora<span>tools</span></div>
+  <span style="font-size:11px;color:#475569;letter-spacing:1px;">EID WISH MAKER</span>
+</div>
+
+<!-- ══════════════════════════════════════════
+     GENERATOR UI
+══════════════════════════════════════════ -->
+<div id="gen-ui">
+  <div class="gen-card">
+    <h1>🌙 Eid Wish Maker</h1>
+    <p class="gen-subtitle">Create your sacred greeting</p>
+
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" id="username" placeholder="Enter your name..." maxlength="28" autocomplete="off">
+    </div>
+
+    <div class="form-group">
+      <label>Language</label>
+      <select id="lang">
+        <option value="en">🌍 English</option>
+        <option value="bn">🇧🇩 Bengali (বাংলা)</option>
+        <option value="ar">🕌 Arabic (العربية)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Choose Theme</label>
+      <div class="theme-swatches" id="swatches">
+        <div class="swatch sw-emerald active" data-theme="t-emerald" title="Emerald">🌿</div>
+        <div class="swatch sw-royal"   data-theme="t-royal"   title="Royal Blue">🔷</div>
+        <div class="swatch sw-sunset"  data-theme="t-sunset"  title="Mystic Purple">💜</div>
+        <div class="swatch sw-golden"  data-theme="t-golden"  title="Golden Dusk">✨</div>
+        <div class="swatch sw-desert"  data-theme="t-desert"  title="Desert Flame">🔥</div>
+        <div class="swatch sw-ocean"   data-theme="t-ocean"   title="Ocean Blue">🌊</div>
+        <div class="swatch sw-rose"    data-theme="t-rose"    title="Rose Night">🌹</div>
+        <div class="swatch sw-night"   data-theme="t-night"   title="Night Sky">🌌</div>
+      </div>
+    </div>
+
+    <button class="btn-gen" onclick="generateLink()">✨ Generate Eid Wish Link</button>
+
+    <div id="result-panel">
+      <p class="result-label">✅ Your wish link is ready!</p>
+      <div class="link-preview" id="link-preview">–</div>
+      <div class="share-grid">
+        <a href="#" id="wa-btn" class="btn-share btn-wa" target="_blank">💬 WhatsApp</a>
+        <button class="btn-share btn-copy" id="copy-btn" onclick="copyLink()">📋 Copy Link</button>
+        <a href="#" id="fb-btn" class="btn-share btn-fb" target="_blank">📘 Facebook</a>
+        <button class="btn-share btn-more" onclick="shareNative()">🚀 More Apps</button>
+      </div>
+    </div>
+  </div>
+  <a href="landing.html" class="back-link">← Back to Doratools</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     REVEAL SCREEN
+══════════════════════════════════════════ -->
+<div id="reveal-screen">
+  <div class="lantern" onclick="runWishSequence()" title="Tap to open">🏮</div>
+  <p class="reveal-title" id="reveal-title"></p>
+  <p class="reveal-sub" id="reveal-sub"></p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     WISH SEQUENCE
+══════════════════════════════════════════ -->
+<div id="wish-ui">
+
+  <div class="seq-step" id="step1">
+    <div class="dua-arabic">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+    <div class="dua-text" id="d1"></div>
+    <div class="dua-ornament">✦ ✦ ✦</div>
+  </div>
+
+  <div class="seq-step" id="step2">
+    <div class="dua-text" id="d2"></div>
+    <div class="dua-ornament">❋ ❋ ❋</div>
+  </div>
+
+  <div class="seq-step" id="step3">
+    <div class="dua-text" id="d3"></div>
+    <div class="dua-ornament">✦ ✦ ✦</div>
+  </div>
+
+  <div class="seq-step" id="step4">
+    <div class="dua-text" id="d4"></div>
+    <div class="dua-ornament">❋ ❋ ❋</div>
+  </div>
+
+  <div id="final-reveal">
+    <p class="final-from" id="final-from"></p>
+    <div class="final-name" id="final-name"></div>
+    <div class="final-eid" id="final-eid"></div>
+    <a href="landing.html" class="btn-create-own" id="btn-create">Create Your Own ✍️</a>
+  </div>
+
+  <div class="watermark">DORATOOLS.COM</div>
+</div>
+
+<script>
+// ═══════════════════════════════════════
+// DICTIONARY
+// ═══════════════════════════════════════
+const dict = {
+  en: {
+    reveal_title: "A Sacred Eid Greeting Has Arrived",
+    reveal_sub: "Tap the lantern to open 🏮",
+    from: "BEST REGARDS FROM",
+    eid: "Eid Mubarak",
+    create: "Create Your Own ✍️",
+    steps: [
+      "Assalamu Alaikum Warahmatullahi Wabarakatuh",
+      "May the infinite mercy and blessings of Allah surround you and your beloved family on this most auspicious occasion of Eid.",
+      "May each of your heartfelt prayers be answered, and may peace, joy, and prosperity fill every corner of your home.",
+      "May the divine light of the Almighty guide your path and bless you with happiness in this life and the hereafter."
+    ]
+  },
+  bn: {
+    reveal_title: "একটি পবিত্র ঈদের শুভেচ্ছা এসেছে",
+    reveal_sub: "খুলতে লণ্ঠনে ট্যাপ করুন 🏮",
+    from: "শুভেচ্ছান্তে",
+    eid: "ঈদ মোবারক",
+    create: "নিজেরটা তৈরি করুন ✍️",
+    steps: [
+      "আসসালামু আলাইকুম ওয়ারাহমাতুল্লাহি ওয়াবারাকাতুহু",
+      "এই পবিত্র ঈদের দিনে মহান আল্লাহ আপনার ও আপনার প্রিয় পরিবারের উপর অফুরন্ত রহমত ও বরকত বর্ষণ করুন।",
+      "আপনার প্রতিটি খাঁটি দোয়া কবুল হোক এবং আপনার ঘর-বাড়ি শান্তি, আনন্দ ও সমৃদ্ধিতে পরিপূর্ণ হয়ে উঠুক।",
+      "আল্লাহর পবিত্র নূর আপনার জীবনপথ আলোকিত করুক এবং দুনিয়া ও আখিরাত উভয়তেই আপনাকে সুখী করুক।"
+    ]
+  },
+  ar: {
+    reveal_title: "وصلتك تهنئة عيد مباركة",
+    reveal_sub: "اضغط على الفانوس لفتحها 🏮",
+    from: "مع أطيب التحيات من",
+    eid: "عيد مبارك",
+    create: "أنشئ تهنئتك الخاصة ✍️",
+    steps: [
+      "السلام عليكم ورحمة الله وبركاته",
+      "تقبل الله منا ومنكم صالح الأعمال وجعل هذا العيد المبارك يوم فرح وسعادة لكم ولأسرتكم الكريمة.",
+      "أسأل الله العظيم أن يبارك في عمركم ويرزقكم الصحة والعافية والسكينة في بيتكم.",
+      "كل عام وأنتم بخير وسلام، أعاده الله عليكم بالخير واليُمن والبركات على مر السنين."
+    ]
+  }
+};
+
+let finalLink = "";
+let selectedTheme = "t-emerald";
+
+// ═══════════════════════════════════════
+// SWATCH SELECTION
+// ═══════════════════════════════════════
+document.querySelectorAll('.swatch').forEach(sw => {
+  sw.addEventListener('click', () => {
+    document.querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    sw.classList.add('active');
+    selectedTheme = sw.dataset.theme;
+  });
+});
+
+// ═══════════════════════════════════════
+// INIT — DECIDE MODE
+// ═══════════════════════════════════════
+function init() {
+  const p = new URLSearchParams(window.location.search);
+
+  if (p.has('n')) {
+    // ── WISH PAGE MODE ──
+    const l = p.get('l') || 'en';
+    const t = p.get('t') || 't-emerald';
+    const name = decodeURIComponent(p.get('n'));
+
+    document.body.classList.add(t);
+    document.getElementById('final-name').innerText = name;
+    document.getElementById('reveal-title').innerText = dict[l].reveal_title;
+    document.getElementById('reveal-sub').innerText   = dict[l].reveal_sub;
+
+    // Populate wish steps
+    dict[l].steps.forEach((s, i) => {
+      const el = document.getElementById('d'+(i+1));
+      if (el) el.innerText = s;
+      // RTL for Arabic
+      if (l === 'ar') {
+        const step = document.getElementById('step'+(i+1));
+        if (step) step.style.direction = 'rtl';
+      }
+    });
+
+    document.getElementById('final-from').innerText = dict[l].from;
+    document.getElementById('final-eid').innerText  = dict[l].eid;
+    document.getElementById('btn-create').innerText = dict[l].create;
+
+    document.getElementById('reveal-screen').style.display = 'flex';
+
+  } else {
+    // ── GENERATOR MODE ──
+    document.getElementById('gen-ui').style.display = 'block';
+  }
+
+  createStars();
+}
+
+// ═══════════════════════════════════════
+// GENERATE LINK
+// ═══════════════════════════════════════
+function generateLink() {
+  const name = document.getElementById('username').value.trim();
+  const lang = document.getElementById('lang').value;
+
+  if (!name) {
+    document.getElementById('username').focus();
+    document.getElementById('username').style.borderColor = '#ef4444';
+    setTimeout(() => document.getElementById('username').style.borderColor = '#1e293b', 1500);
+    return;
+  }
+
+  const base = window.location.href.split('?')[0];
+  finalLink = `${base}?n=${encodeURIComponent(name)}&t=${selectedTheme}&l=${lang}`;
+
+  document.getElementById('link-preview').innerText = finalLink;
+
+  const waText = encodeURIComponent(`🌙 *${dict[lang].eid}!*\n${name} sent you a sacred Eid greeting.\nTap to open: ${finalLink}`);
+  document.getElementById('wa-btn').href = `https://wa.me/?text=${waText}`;
+
+  const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(finalLink)}`;
+  document.getElementById('fb-btn').href = fbUrl;
+
+  document.getElementById('result-panel').style.display = 'block';
+  document.getElementById('result-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(finalLink).then(() => {
+    const b = document.getElementById('copy-btn');
+    b.innerText = "✅ Copied!";
+    b.style.background = "#064e3b";
+    setTimeout(() => { b.innerText = "📋 Copy Link"; b.style.background = ""; }, 2200);
+  });
+}
+
+async function shareNative() {
+  if (navigator.share) {
+    try {
+      await navigator.share({ title: 'Eid Mubarak', text: 'Open your sacred Eid greeting 🌙', url: finalLink });
+    } catch(e) {}
+  } else {
+    copyLink();
+  }
+}
+
+// ═══════════════════════════════════════
+// WISH SEQUENCE
+// ═══════════════════════════════════════
+function runWishSequence() {
+  document.getElementById('reveal-screen').style.display = 'none';
+  document.getElementById('wish-ui').style.display = 'flex';
+
+  const steps = ['step1','step2','step3','step4'];
+  const timings = [4500, 7500, 7500, 6500];
+  let elapsed = 0;
+
+  steps.forEach((id, i) => {
+    setTimeout(() => {
+      // hide previous
+      if (i > 0) document.getElementById(steps[i-1]).classList.remove('active');
+      document.getElementById(id).classList.add('active');
+    }, elapsed);
+    elapsed += timings[i];
+  });
+
+  // Final reveal
+  setTimeout(() => {
+    document.getElementById('step4').classList.remove('active');
+    const fr = document.getElementById('final-reveal');
+    fr.style.display = 'flex';
+  }, elapsed);
+}
+
+// ═══════════════════════════════════════
+// STARFIELD
+// ═══════════════════════════════════════
+function createStars() {
+  const container = document.getElementById('bg-stars');
+  for (let i = 0; i < 60; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `
+      left:${Math.random()*100}%;
+      top:${Math.random()*100}%;
+      width:${size}px; height:${size}px;
+      --dur:${(Math.random()*4+2).toFixed(1)}s;
+      --delay:-${(Math.random()*5).toFixed(1)}s;
+    `;
+    container.appendChild(s);
+  }
+}
+
+init();
+</script>
+</body>
+</html>
