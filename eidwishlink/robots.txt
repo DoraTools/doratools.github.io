@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths if any
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all main pages
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /sitemap.html
+Allow: /sitemap.xml
+Allow: /eidwishlink/generator.html
+
+# Sitemap location
+Sitemap: https://doratools.blogspot.com/sitemap.xml
+
+# Crawl delay (be polite to crawlers)
+Crawl-delay: 1
